@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">CEFET-MG Contagem</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_ambiente">Ambientes</string>
+    <string name="title_info">Informações Úteis</string>
     <string name="title_welcome">Seu novo Campus Contagem</string>
-    <string name="address">Alameda das Perdizes, 61, Bairro Cabral, Contagem - MG, 32146-054</string>
+    <string name="address">Alameda das Perdizes, 61, Bairro Cabral, Contagem-MG, 32146-054</string>
+    <string name="linha_bus">Linha:</string>
+    <string name="tarifa_bus">Tarifa:</string>
+    <string name="descricao_linha_bus">BAIRRO CANDIDA FERREIRA VIA CABRAL/BH</string>
 
     <string-array name="array_place">
         <item>0;P1;Portaria</item>
@@ -40,13 +42,13 @@
         <item>3;303;Sala de Aula</item>
         <item>3;304;Materiais</item>
         <item>3;305;Sala de Aula</item>
-        <item>3;306;Lab. Fésica</item>
+        <item>3;306;Lab. Física</item>
         <item>3;307;Sala de Aula</item>
         <item>3;308;Sala de Aula</item>
         <item>3;309;Sala de Aula (Camb 3)</item>
         <item>3;310A;Lab. de Pesquisa (Bic-Jnr)</item>
-        <item>3;310B;Lab. Eelt. (aluno)</item>
-        <item>3;310C;Lab. Info (aluno)</item>
+        <item>3;310B;Lab. de Eletroeletrônica (aluno)</item>
+        <item>3;310C;Lab. Informática (aluno)</item>
         <item>3;311;Sala de Aula (Info 3)</item>
         <item>3;313;Sala de Aula (EElt 3)</item>
         <item>4;401B;Prefeitura</item>
@@ -72,25 +74,25 @@
         <item>5;504;Diretoria</item>
         <item>5;504A;Diretor</item>
         <item>5;504B;Diretoria Adjunta</item>
-        <item>5;505;Coordenações de curso</item>
+        <item>5;505;Coordenações de Curso</item>
         <item>5;506A;Sala de Atendimento (Assistência Social)</item>
         <item>5;506A;Sala de Atendimento (Psicologia)</item>
         <item>5;506B;Coord. de Política Estudantil</item>
         <item>5;507;Coordenação de Informática</item>
         <item>5;507;Chefia de Departamento (DELCOM)</item>
-        <item>5;508A;Sala de Atendimento CP</item>
+        <item>5;508A;Sala de Atendimento (Coord. Pedagógica)</item>
         <item>5;508B;Coordenação Pedagógica</item>
         <item>5;509;Coordenação de Controle Ambiental</item>
         <item>5;509;Chefia de Departamento (DECAQ)</item>
         <item>5;510B;Sala de Reunião</item>
         <item>5;511;Coordenação de Eletroeletrônica</item>
         <item>5;511;Coordenação Acadêmica</item>
-        <item>5;512;Setor de Tecnologia da Informação;Diego</item>
-        <item>5;513;Chefia de Departamento da Formação Geral; Gustavo Lima</item>
+        <item>5;512;Setor de Tecnologia da Informação </item>
+        <item>5;513;Chefia de Departamento da Formação Geral</item>
         <item>5;515;Gabinete de Professores</item>
         <item>5;516;Gabinete de Professores</item>
         <item>5;517;Gabinete de Professores</item>
-        <item>5;519;Sala de Convivência</item>
+        <item>5;519;Sala de Convivência (Servidores)</item>
     </string-array>
 
     <string-array name="array_transport">

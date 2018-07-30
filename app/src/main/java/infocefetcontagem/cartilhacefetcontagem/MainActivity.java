@@ -25,12 +25,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     // Abre uma transação e adiciona
                     ft = fm.beginTransaction();
-                    ft.replace(R.id.fragment_content,new InfoFragment());
-                    ft.commit();
-                    return true;
-                case R.id.navigation_dashboard:
-                    // Abre uma transação e adiciona
-                    ft = fm.beginTransaction();
                     ft.replace(R.id.fragment_content,new MainFragment());
                     ft.commit();
                     return true;
@@ -53,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.fragment_content,new InfoFragment());
+        ft.add(R.id.fragment_content,new MainFragment());
         ft.commit();
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
