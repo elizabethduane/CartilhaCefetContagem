@@ -27,12 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:fontFamily="@font/josefin_sans_light"
         android:gravity="center"
         android:text="@string/title_welcome"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/primaryTextColor"
-        android:textSize="48sp" />
+        android:textSize="48sp"
+        android:textStyle="bold"/>
 
 
 

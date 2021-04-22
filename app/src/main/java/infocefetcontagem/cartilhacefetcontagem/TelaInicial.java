@@ -33,7 +33,7 @@ public class TelaInicial extends AppCompatActivity {
             public void run() {
                 mostrarMain();
             }
-        }, 5000);
+        }, 3000);
 
     }
 

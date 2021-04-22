@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">CEFET-MG Contagem</string>
     <string name="title_ambiente">Ambientes</string>
-    <string name="title_info">Informações Úteis</string>
-    <string name="title_welcome">Seu novo Campus Contagem</string>
+    <string name="title_info">Contatos Úteis</string>
+    <string name="title_photos">Fotos</string>
+    <string name="title_welcome">Unidade Contagem</string>
     <string name="address">Alameda das Perdizes, 61, Bairro Cabral, Contagem-MG, 32146-054</string>
     <string name="linha_bus">Linha:</string>
     <string name="tarifa_bus">Tarifa:</string>
@@ -117,5 +118,10 @@
         <item>R$ 4,05</item>
         <item>http://www.contagem.mg.gov.br/horario-de-onibus/</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_image_view">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

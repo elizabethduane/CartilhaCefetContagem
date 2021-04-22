@@ -25,13 +25,19 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     // Abre uma transação e adiciona
                     ft = fm.beginTransaction();
-                    ft.replace(R.id.fragment_content,new MainFragment());
+                    ft.replace(R.id.fragment_content,new PlacesFragment());
                     ft.commit();
                     return true;
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
                     ft = fm.beginTransaction();
                     ft.replace(R.id.fragment_content,new TransportFragment());
+                    ft.commit();
+                    return true;
+                case R.id.navigation_photos:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    ft = fm.beginTransaction();
+                    ft.replace(R.id.fragment_content,new GalleryFragment());
                     ft.commit();
                     return true;
             }
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.fragment_content,new MainFragment());
+        ft.add(R.id.fragment_content,new PlacesFragment());
         ft.commit();
 
         BottomNavigationView navigation = findViewById(R.id.navigation);

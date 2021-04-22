@@ -7,9 +7,15 @@
         <ImageView
             android:id="@+id/img_fundo"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:src="@drawable/portaria_campus2"
+            android:layout_height="200dp"
+            android:src="@drawable/visao1"
             android:scaleType="centerCrop"/>
+
+        <!--ViewFlipper
+            android:id="@+id/view_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/-->
 
         <ExpandableListView
             android:id="@+id/listViewFloor"

@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.models;
 
 public class Transporte {
 

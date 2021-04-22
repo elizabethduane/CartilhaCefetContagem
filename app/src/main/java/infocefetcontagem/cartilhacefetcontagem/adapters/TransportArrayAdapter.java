@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import infocefetcontagem.cartilhacefetcontagem.Floor;
-import infocefetcontagem.cartilhacefetcontagem.Transporte;
+import infocefetcontagem.cartilhacefetcontagem.R;
+import infocefetcontagem.cartilhacefetcontagem.models.Transporte;
 
 public class TransportArrayAdapter extends ArrayAdapter<Transporte> {
 

@@ -7,6 +7,11 @@
         android:title="@string/title_ambiente"/>
 
     <item
+        android:id="@+id/navigation_photos"
+        android:icon="@drawable/information"
+        android:title="@string/title_photos"/>
+
+    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/information"
         android:title="@string/title_info"/>

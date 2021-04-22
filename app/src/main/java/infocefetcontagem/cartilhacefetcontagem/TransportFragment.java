@@ -3,15 +3,15 @@ package infocefetcontagem.cartilhacefetcontagem;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
+import infocefetcontagem.cartilhacefetcontagem.adapters.TransportArrayAdapter;
+import infocefetcontagem.cartilhacefetcontagem.models.Transporte;
 
 public class TransportFragment extends Fragment {
 
@@ -45,7 +45,7 @@ public class TransportFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.transport_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_transport, container, false);
 
         listView = (ListView) view.findViewById(R.id.list_view_transport);
 

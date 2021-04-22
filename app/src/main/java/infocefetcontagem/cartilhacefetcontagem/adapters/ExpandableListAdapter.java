@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,10 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import infocefetcontagem.cartilhacefetcontagem.models.Floor;
+import infocefetcontagem.cartilhacefetcontagem.R;
+import infocefetcontagem.cartilhacefetcontagem.models.Place;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter{
 

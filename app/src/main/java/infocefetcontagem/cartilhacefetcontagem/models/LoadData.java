@@ -1,6 +1,10 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.models;
 
 import java.util.ArrayList;
+
+import infocefetcontagem.cartilhacefetcontagem.models.Floor;
+import infocefetcontagem.cartilhacefetcontagem.models.Place;
+import infocefetcontagem.cartilhacefetcontagem.models.Transporte;
 
 public class LoadData {
 
