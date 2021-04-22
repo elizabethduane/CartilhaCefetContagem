@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import java.util.List;
 
 import infocefetcontagem.cartilhacefetcontagem.adapters.SliderImageAdapter;
+import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;
 
 /**
@@ -40,7 +41,7 @@ public class SliderImageActivity extends AppCompatActivity {
     private static final int UI_ANIMATION_DELAY = 300;
     private static final String TAG = "SliderImageActivity";
     private final Handler mHideHandler = new Handler();
-    private ViewPager mContentView;
+    private View mContentView;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
 
@@ -112,7 +113,9 @@ public class SliderImageActivity extends AppCompatActivity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = (ViewPager) findViewById(R.id.fullscreen_content);
+        mContentView = findViewById(R.id.fullscreen_content);
+
+        final ViewPager viewPager = (ViewPager)findViewById(R.id.slider_view_pager);
 
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
@@ -128,50 +131,42 @@ public class SliderImageActivity extends AppCompatActivity {
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
        // ImageView mPhoto = (ImageView) findViewById(R.id.image_large_view);
 
+        List<Photo> photoList;
+
         if(getIntent().hasExtra("place")) {
 
             int place_filter = getIntent().getIntExtra("place",-1);
 
-            if(place_filter != -1){
-                Log.d(TAG, "onCreate: OK - " + place_filter);
+            if(place_filter == AppData.PLACE_ALL)
+                photoList = AppData.getPhotos();
+            else
+                photoList = AppData.getPhotosByPlace(place_filter);
 
-                List<Photo> photoList;
-                photoList = Photo.getPhotosByPlace(place_filter);
+            Log.d(TAG, "onCreate: OK - " + place_filter);
 
+            viewPager.setAdapter(new SliderImageAdapter(this, photoList));
 
-                mContentView.setAdapter(new SliderImageAdapter(this, photoList));
+            NUM_PAGES = photoList.size();
 
-
-                NUM_PAGES = photoList.size();
-
-                if( getIntent().hasExtra("position")){
-                    currentPage = getIntent().getIntExtra("position",0);
-                }
-
-                // Auto start of viewpager
-                final Handler handler = new Handler();
-                final Runnable Update = new Runnable() {
-                    public void run() {
-                        if (currentPage == NUM_PAGES) {
-                            currentPage = 0;
-                        }
-                        mContentView.setCurrentItem(currentPage++, true);
-                    }
-                };
-
-
+            if( getIntent().hasExtra("position")){
+                currentPage = getIntent().getIntExtra("position",0);
             }
 
-           /* int photoId = getIntent().getIntExtra("photoId",R.drawable.visao1);
-            Log.d(TAG, "onCreate: "+photoId);
-            mContentView.setImageResource(photoId);*/
+            // Auto start of viewpager
+            final Handler handler = new Handler();
+            final Runnable Update = new Runnable() {
+                public void run() {
+                    if (currentPage == NUM_PAGES) {
+                        currentPage = 0;
+                    }
+                    viewPager.setCurrentItem(currentPage++, true);
+                }
+            };
 
 
         }else{
-
-            Log.d(TAG, "onCreate: No extra");
+            Log.d(TAG, "onCreate: NO EXTRA");
         }
-
     }
 
     @Override

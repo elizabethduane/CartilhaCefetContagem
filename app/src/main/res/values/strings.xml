@@ -123,5 +123,8 @@
     <string name="title_activity_image_view">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="areas_externas">Áreas Externas</string>
+    <string name="outros_espacos">Outros Espaços</string>
+    <string name="laboratorios">Laboratórios</string>
 
 </resources>

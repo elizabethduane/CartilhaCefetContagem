@@ -6,16 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.models.Floor;
-import infocefetcontagem.cartilhacefetcontagem.models.Place;
-import infocefetcontagem.cartilhacefetcontagem.models.Transporte;
-
-import static android.content.ContentValues.TAG;
-import static infocefetcontagem.cartilhacefetcontagem.models.Photo.PLACE_EXTERNO;
-import static infocefetcontagem.cartilhacefetcontagem.models.Photo.PLACE_INTERNO;
-import static infocefetcontagem.cartilhacefetcontagem.models.Photo.PLACE_LABS;
 
 public class AppData {
+
+    //define the photo's group
+    public static final int PLACE_ALL = -1;
+    public static final int PLACE_EXTERNO = 0;
+    public static final int PLACE_LABS = 1;
+    public static final int PLACE_INTERNO = 2;
 
     private static ArrayList<Floor> floorArrayList;
     private static ArrayList<Transporte> transporteArrayList;

@@ -1,6 +1,7 @@
 package infocefetcontagem.cartilhacefetcontagem;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -76,7 +78,7 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_places, container, false);
+        final View view = inflater.inflate(R.layout.fragment_places, container, false);
 
         RecyclerView recyclerViewPlaces = (RecyclerView) view.findViewById(R.id.recycler_view_places);
         RecyclerView recyclerViewGrid = (RecyclerView) view.findViewById(R.id.recycler_view_grid);
@@ -101,7 +103,16 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
         recyclerViewGrid.setAdapter(new MyPhotoRecyclerViewAdapter(mPhotoList,this));
 
 
+        ImageView p1 = (ImageView)view.findViewById(R.id.place_externo);
 
+        p1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //faça algo
+                onPlaceClick(view);
+            }
+
+        });
         return view;
     }
 
@@ -122,6 +133,37 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
 
         intent.putExtra("place", mPhotoList.get(position).getPlace());
         intent.putExtra("position", position);
+        startActivity(intent);
+
+        /*Photo photo = new Photo();
+        List<Photo> photos = photo.getPhotosByPlace(0);
+        photo = photos.get(position);
+
+        intent.putExtra("photoId", photo.getPhotoId());
+        startActivity(intent);*/
+    }
+
+    public void onPlaceClick(View view) {
+        int  place = -1;
+
+        switch (view.getId()){
+            case R.id.place_externo:
+                place = AppData.PLACE_EXTERNO;
+                        break;
+            case R.id.place_interno:
+                place = AppData.PLACE_INTERNO;
+                break;
+            case R.id.place_labs:
+                place = AppData.PLACE_LABS;
+                break;
+        }
+
+        Intent intent = new Intent(this.getContext(), SliderImageActivity.class);
+
+        Log.d(TAG, "onPlaceClick: " + place);
+
+        intent.putExtra("place", place);
+        intent.putExtra("position", 0);
         startActivity(intent);
 
         /*Photo photo = new Photo();
