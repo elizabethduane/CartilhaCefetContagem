@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 import infocefetcontagem.cartilhacefetcontagem.adapters.ExpandableListAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.Floor;
-import infocefetcontagem.cartilhacefetcontagem.models.LoadData;
+import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 
 public class MainFragment extends Fragment {
 
@@ -35,7 +35,7 @@ public class MainFragment extends Fragment {
         ArrayList<String> placeArrayListAll = new ArrayList<String>();
         placeArrayListAll.addAll(Arrays.asList(getResources().getStringArray(R.array.array_place)));
 
-        LoadData ld = new LoadData(placeArrayListAll);
+        AppData ld = new AppData(placeArrayListAll);
         floorList = ld.getData();
 
     }

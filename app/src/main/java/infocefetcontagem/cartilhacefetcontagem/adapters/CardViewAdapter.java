@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import infocefetcontagem.cartilhacefetcontagem.R;
 import infocefetcontagem.cartilhacefetcontagem.models.PlaceHeader;
 
@@ -57,13 +58,14 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.Person
         TextView placeDescription;
         ImageView placePhoto;
 
+
         OnCardListener onCardListener;
 
         PersonViewHolder(View itemView, OnCardListener onCardListener){
             super(itemView);
-            cardView = (CardView)itemView.findViewById(R.id.card_view);
+           // cardView = (CardView)itemView.findViewById(R.id.card_view);
             placeDescription = (TextView) itemView.findViewById(R.id.place_description);
-            placePhoto = (ImageView) itemView.findViewById(R.id.place_photo);
+            placePhoto = (ImageView)itemView.findViewById(R.id.place_photo);
 
             this.onCardListener = onCardListener;
             itemView.setOnClickListener(this);

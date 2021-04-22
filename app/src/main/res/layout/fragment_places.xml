@@ -7,15 +7,20 @@
     tools:context=".PlacesFragment"
     android:orientation="vertical"
     android:background="@color/cardview_shadow_end_color"
-    android:paddingHorizontal="8dp"
-    android:paddingBottom="8dp"
     >
-
 
    <android.support.v7.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:id="@+id/recycler_view"
+       android:id="@+id/recycler_view_places"
+       android:layout_gravity="center_horizontal"
+
        />
 
+   <android.support.v7.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/recycler_view_grid"
+       android:layout_marginTop="8dp"
+       />
 </LinearLayout>

@@ -3,8 +3,7 @@ package infocefetcontagem.cartilhacefetcontagem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,17 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import infocefetcontagem.cartilhacefetcontagem.adapters.CardViewAdapter;
-import infocefetcontagem.cartilhacefetcontagem.models.PlaceHeader;
+import java.util.List;
 
-import static android.content.ContentValues.TAG;
+import infocefetcontagem.cartilhacefetcontagem.adapters.CardViewAdapter;
+import infocefetcontagem.cartilhacefetcontagem.adapters.MyPhotoRecyclerViewAdapter;
+import infocefetcontagem.cartilhacefetcontagem.models.AppData;
+import infocefetcontagem.cartilhacefetcontagem.models.Photo;
+import infocefetcontagem.cartilhacefetcontagem.models.PlaceHeader;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link PlacesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardListener {
+public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardListener, MyPhotoRecyclerViewAdapter.OnItemListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +34,12 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private static final String ARG_COLUMN_COUNT = "column-count";
+    private static final String TAG = "PlacesFragment" ;
+    // TODO: Customize parameters
+    private int mColumnCount = 3;
+    private List<Photo> mPhotoList;
 
     public PlacesFragment() {
         // Required empty public constructor
@@ -70,17 +78,29 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_places, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        RecyclerView recyclerViewPlaces = (RecyclerView) view.findViewById(R.id.recycler_view_places);
+        RecyclerView recyclerViewGrid = (RecyclerView) view.findViewById(R.id.recycler_view_grid);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerViewPlaces.setLayoutManager(linearLayoutManager);
 
         PlaceHeader placeHeader = new PlaceHeader();
 
-        //List<PlaceHeader> headers = new ArrayList<>();
-
         CardViewAdapter adapter = new CardViewAdapter(placeHeader.getHeaders(),this);
-        recyclerView.setAdapter(adapter);
+        recyclerViewPlaces.setAdapter(adapter);
+
+        if (mColumnCount <= 1) {
+            recyclerViewGrid.setLayoutManager(new LinearLayoutManager(container.getContext()));
+        } else {
+            recyclerViewGrid.setLayoutManager(new GridLayoutManager(container.getContext(), mColumnCount));
+        }
+
+
+        mPhotoList = AppData.getPhotos();
+        recyclerViewGrid.setAdapter(new MyPhotoRecyclerViewAdapter(mPhotoList,this));
+
+
 
         return view;
     }
@@ -93,4 +113,22 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
         startActivity(intent);
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this.getContext(), SliderImageActivity.class);
+
+        Log.d(TAG, "onItemClick: place " +mPhotoList.get(position).getPlace());
+        Log.d(TAG, "onItemClick: position "+position);
+
+        intent.putExtra("place", mPhotoList.get(position).getPlace());
+        intent.putExtra("position", position);
+        startActivity(intent);
+
+        /*Photo photo = new Photo();
+        List<Photo> photos = photo.getPhotosByPlace(0);
+        photo = photos.get(position);
+
+        intent.putExtra("photoId", photo.getPhotoId());
+        startActivity(intent);*/
+    }
 }

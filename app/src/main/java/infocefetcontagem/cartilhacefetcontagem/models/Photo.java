@@ -21,15 +21,15 @@ public class Photo implements Serializable {
     private static List<Photo> photos;
 
     //define the photo's group
-    private static final int PLACE_EXTERNO = 0;
-    private static final int PLACE_LABS = 1;
-    private static final int PLACE_INTERNO = 2;
+    public static final int PLACE_EXTERNO = 0;
+    public static final int PLACE_LABS = 1;
+    public static final int PLACE_INTERNO = 2;
 
     public Photo(){
-        inicializeData();
+        //inicializeData();
     }
 
-    private Photo(String description, int photoId, int place){
+    public Photo(String description, int photoId, int place){
         this.description = description;
         this.photoId = photoId;
         this.place = place;

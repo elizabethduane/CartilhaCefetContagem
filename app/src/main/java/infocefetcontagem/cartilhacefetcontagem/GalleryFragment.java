@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import infocefetcontagem.cartilhacefetcontagem.adapters.CardViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.adapters.MyPhotoRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;
+import infocefetcontagem.cartilhacefetcontagem.models.PlaceHeader;
 
 /**
  * A fragment representing a list of Items.
@@ -57,7 +59,8 @@ public class GalleryFragment extends Fragment implements MyPhotoRecyclerViewAdap
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            RecyclerView recyclerView = (RecyclerView) container.findViewById(R.id.recycler_view_grid);
+
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
@@ -68,6 +71,19 @@ public class GalleryFragment extends Fragment implements MyPhotoRecyclerViewAdap
 
             recyclerView.setAdapter(new MyPhotoRecyclerViewAdapter(photos.getPhotos(),this));
         }
+
+       /* RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        PlaceHeader placeHeader = new PlaceHeader();
+
+        //List<PlaceHeader> headers = new ArrayList<>();
+
+        CardViewAdapter adapter = new CardViewAdapter(placeHeader.getHeaders(), (CardViewAdapter.OnCardListener) this);
+        recyclerView.setAdapter(adapter);*/
+
         return view;
     }
 
