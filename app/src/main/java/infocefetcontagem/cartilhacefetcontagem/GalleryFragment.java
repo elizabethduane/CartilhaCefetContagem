@@ -10,10 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import infocefetcontagem.cartilhacefetcontagem.adapters.CardViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.adapters.MyPhotoRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;
-import infocefetcontagem.cartilhacefetcontagem.models.PlaceHeader;
 
 /**
  * A fragment representing a list of Items.
@@ -80,9 +78,7 @@ public class GalleryFragment extends Fragment implements MyPhotoRecyclerViewAdap
         PlaceHeader placeHeader = new PlaceHeader();
 
         //List<PlaceHeader> headers = new ArrayList<>();
-
-        CardViewAdapter adapter = new CardViewAdapter(placeHeader.getHeaders(), (CardViewAdapter.OnCardListener) this);
-        recyclerView.setAdapter(adapter);*/
+*/
 
         return view;
     }

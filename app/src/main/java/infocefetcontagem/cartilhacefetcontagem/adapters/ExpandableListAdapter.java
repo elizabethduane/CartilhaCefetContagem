@@ -9,46 +9,95 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import infocefetcontagem.cartilhacefetcontagem.models.Floor;
+import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 import infocefetcontagem.cartilhacefetcontagem.R;
 import infocefetcontagem.cartilhacefetcontagem.models.Place;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter{
+    @Override
+    public int getGroupCount() {
+        return 0;
+    }
 
-    private Context context;
-    private ArrayList<Floor> floorList;
-    private ArrayList<Floor> originalList;
+    @Override
+    public int getChildrenCount(int i) {
+        return 0;
+    }
 
-    public ExpandableListAdapter(Context context, ArrayList<Floor> floorList){
+    @Override
+    public Object getGroup(int i) {
+        return null;
+    }
+
+    @Override
+    public Object getChild(int i, int i1) {
+        return null;
+    }
+
+    @Override
+    public long getGroupId(int i) {
+        return 0;
+    }
+
+    @Override
+    public long getChildId(int i, int i1) {
+        return 0;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return false;
+    }
+
+    @Override
+    public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
+        return null;
+    }
+
+    @Override
+    public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
+        return null;
+    }
+
+    @Override
+    public boolean isChildSelectable(int i, int i1) {
+        return false;
+    }
+
+   /* private Context context;
+    private ArrayList<Sector> sectorList;
+    private ArrayList<Sector> originalList;
+
+    public ExpandableListAdapter(Context context, ArrayList<Sector> sectorList){
 
         this.context = context;
-        this.floorList = new ArrayList<Floor>();
-        this.floorList.addAll(floorList);
+        this.sectorList = new ArrayList<Sector>();
+        this.sectorList.addAll(sectorList);
 
-        this.originalList = new ArrayList<Floor>();
-        this.originalList.addAll(floorList);
+        this.originalList = new ArrayList<Sector>();
+        this.originalList.addAll(sectorList);
 
     }
 
 
     @Override
     public int getGroupCount() {
-        return floorList.size();
+        return sectorList.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return floorList.get(groupPosition).getPlaceList().size();
+        return sectorList.get(groupPosition).getPlaceList().size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return floorList.get(groupPosition);
+        return sectorList.get(groupPosition);
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return floorList.get(groupPosition).getPlaceList().get(childPosition);
+        return sectorList.get(groupPosition).getPlaceList().get(childPosition);
     }
 
     @Override
@@ -69,7 +118,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View view, ViewGroup parent) {
 
-        Floor floor = (Floor)getGroup(groupPosition);
+        Sector sector = (Sector)getGroup(groupPosition);
 
         if(view == null){
 
@@ -79,7 +128,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
         }
 
         TextView tvFloor = view.findViewById(R.id.textView_floor);
-        tvFloor.setText(floor.getNameFloor().trim());
+        tvFloor.setText(sector.getNameFloor().trim());
 
         return view;
     }
@@ -113,16 +162,16 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
     public void filterData(String query){
 
         query = query.toLowerCase().trim();
-        floorList.clear();
+        sectorList.clear();
 
         if(query.isEmpty()){
-            floorList.addAll(originalList);
+            sectorList.addAll(originalList);
         }
         else {
 
-            for(Floor floor: originalList){
+            for(Sector sector : originalList){
 
-                ArrayList<Place> placeList = floor.getPlaceList();
+                ArrayList<Place> placeList = sector.getPlaceList();
 
                 ArrayList<Place> newList = new ArrayList<Place>();
                 for(Place place: placeList){
@@ -132,13 +181,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
                     }
                 }
                 if(newList.size() > 0){
-                    Floor nFloor = new Floor(floor.getNumberFloor(),newList);
-                    floorList.add(nFloor);
+                    Sector nSector = new Sector(sector.getNumberFloor(),newList);
+                    sectorList.add(nSector);
                 }
             }
         }
 
         notifyDataSetChanged();
     }
-
+*/
 }

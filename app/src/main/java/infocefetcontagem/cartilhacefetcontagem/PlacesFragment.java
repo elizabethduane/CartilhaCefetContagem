@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +16,6 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.adapters.CardViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.adapters.MyPhotoRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;
@@ -26,7 +26,7 @@ import infocefetcontagem.cartilhacefetcontagem.models.PlaceHeader;
  * Use the {@link PlacesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardListener, MyPhotoRecyclerViewAdapter.OnItemListener {
+public class PlacesFragment extends Fragment implements MyPhotoRecyclerViewAdapter.OnItemListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,17 +80,10 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_places, container, false);
 
-        RecyclerView recyclerViewPlaces = (RecyclerView) view.findViewById(R.id.recycler_view_places);
         RecyclerView recyclerViewGrid = (RecyclerView) view.findViewById(R.id.recycler_view_grid);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerViewPlaces.setLayoutManager(linearLayoutManager);
-
-        PlaceHeader placeHeader = new PlaceHeader();
-
-        CardViewAdapter adapter = new CardViewAdapter(placeHeader.getHeaders(),this);
-        recyclerViewPlaces.setAdapter(adapter);
 
         if (mColumnCount <= 1) {
             recyclerViewGrid.setLayoutManager(new LinearLayoutManager(container.getContext()));
@@ -108,30 +101,42 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
         p1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //faça algo
-                onPlaceClick(view);
+                onPlaceClick(v);
             }
 
         });
+
+        ImageView p2 = (ImageView)view.findViewById(R.id.place_labs);
+
+        p2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPlaceClick(v);
+            }
+
+        });
+
+        ImageView p3 = (ImageView)view.findViewById(R.id.place_interno);
+
+        p3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPlaceClick(v);
+            }
+
+        });
+
         return view;
-    }
-
-    @Override
-    public void onCardClick(int position) {
-        Intent intent = new Intent(this.getContext(), GalleryActivity.class);
-
-        intent.putExtra("place", position);
-        startActivity(intent);
     }
 
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(this.getContext(), SliderImageActivity.class);
 
-        Log.d(TAG, "onItemClick: place " +mPhotoList.get(position).getPlace());
+
         Log.d(TAG, "onItemClick: position "+position);
 
-        intent.putExtra("place", mPhotoList.get(position).getPlace());
+        intent.putExtra("place", AppData.PLACE_ALL);
         intent.putExtra("position", position);
         startActivity(intent);
 
@@ -146,6 +151,8 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
     public void onPlaceClick(View view) {
         int  place = -1;
 
+
+
         switch (view.getId()){
             case R.id.place_externo:
                 place = AppData.PLACE_EXTERNO;
@@ -157,6 +164,8 @@ public class PlacesFragment extends Fragment implements CardViewAdapter.OnCardLi
                 place = AppData.PLACE_LABS;
                 break;
         }
+
+        Log.d(TAG, "onPlaceClick: "+ view.getId());
 
         Intent intent = new Intent(this.getContext(), SliderImageActivity.class);
 

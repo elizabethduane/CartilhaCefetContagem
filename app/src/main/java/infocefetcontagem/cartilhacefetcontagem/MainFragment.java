@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import infocefetcontagem.cartilhacefetcontagem.adapters.ExpandableListAdapter;
-import infocefetcontagem.cartilhacefetcontagem.models.Floor;
+import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 
 public class MainFragment extends Fragment {
 
-    ArrayList<Floor> floorList;
+    ArrayList<Sector> sectorList;
     ExpandableListAdapter adapter;
     ExpandableListView listView;
     ViewFlipper viewFlipper;
@@ -36,7 +36,7 @@ public class MainFragment extends Fragment {
         placeArrayListAll.addAll(Arrays.asList(getResources().getStringArray(R.array.array_place)));
 
         AppData ld = new AppData(placeArrayListAll);
-        floorList = ld.getData();
+        sectorList = ld.getData();
 
     }
 
@@ -47,11 +47,11 @@ public class MainFragment extends Fragment {
 
         listView = (ExpandableListView) view.findViewById(R.id.listViewFloor);
 
-        adapter = new ExpandableListAdapter(container.getContext(),floorList);
-        listView.setAdapter(adapter);
+        //adapter = new ExpandableListAdapter(container.getContext(), sectorList);
+       // listView.setAdapter(adapter);
 
         //start the first floor expanded
-        listView.expandGroup(0);
+      //  listView.expandGroup(0);
 
 
         /*int images[] = {R.drawable.visao1, R.drawable.portaria_campus2, R.drawable.predio2};
@@ -96,17 +96,17 @@ public class MainFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                adapter.filterData(newText);
-                expandAll();
+             ///   adapter.filterData(newText);
+               // expandAll();
                 return false;
             }
         });
     }
 
     private void expandAll() {
-        int count = adapter.getGroupCount();
+       /* int count = adapter.getGroupCount();
         for (int i = 0; i < count; i++){
             listView.expandGroup(i);
-        }
+        }*/
     }
 }

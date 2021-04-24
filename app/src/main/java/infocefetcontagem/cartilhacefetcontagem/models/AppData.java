@@ -1,6 +1,6 @@
 package infocefetcontagem.cartilhacefetcontagem.models;
 
-import android.util.Log;
+import android.content.res.Resources;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,17 +15,22 @@ public class AppData {
     public static final int PLACE_LABS = 1;
     public static final int PLACE_INTERNO = 2;
 
-    private static ArrayList<Floor> floorArrayList;
+    private static ArrayList<Sector> sectorArrayList;
     private static ArrayList<Transporte> transporteArrayList;
     private static List<Photo> photoList;
 
+    public static void inicializeData(){
+        inicializePhotoData();
+        inicializeSectorData();
+
+    }
     public AppData(ArrayList<String> listAllPlace) {
 
-        floorArrayList = new ArrayList<Floor>();
+      /*  sectorArrayList = new ArrayList<Sector>();
         ArrayList<Place> placeArrayList = new ArrayList<Place>();
         int floor, previewFloor = 0;
 
-        Floor currentFloor = new Floor(0);
+        Sector currentSector = new Sector(0);
 
         for (String linha : listAllPlace) {
 
@@ -33,10 +38,10 @@ public class AppData {
             floor = Integer.parseInt(dados[0]);
 
             if (floor != previewFloor) {
-                currentFloor.setPlaceList(placeArrayList);
+                currentSector.setPlaceList(placeArrayList);
 
-                floorArrayList.add(currentFloor);
-                currentFloor = new Floor(floor);
+                sectorArrayList.add(currentSector);
+                currentSector = new Sector(floor);
 
                 placeArrayList = new ArrayList<Place>();
                 previewFloor = floor;
@@ -45,21 +50,21 @@ public class AppData {
 
         }
 
-        currentFloor.setPlaceList(placeArrayList);
-        floorArrayList.add(currentFloor);
-
+        //currentSector.setPlaceList(placeArrayList);
+        sectorArrayList.add(currentSector);
+*/
 
     }
 
-    public ArrayList<Floor> getData(){
-        return floorArrayList;
+    public ArrayList<Sector> getData(){
+        return sectorArrayList;
 
     }
 
     public static List<Photo> getPhotos(){
 
         if(photoList == null)
-            inicializeData();
+            inicializePhotoData();
 
         return photoList;
     }
@@ -67,7 +72,7 @@ public class AppData {
     public static List<Photo> getPhotosByPlace(int place){
 
         if(photoList == null)
-            inicializeData();
+            inicializePhotoData();
 
         //get all photos
         List<Photo> filteredPhotos = new ArrayList<>();
@@ -85,7 +90,8 @@ public class AppData {
     }
 
 
-    private static void inicializeData(){
+
+    private static void inicializePhotoData(){
         photoList = new ArrayList<>();
 
         photoList.add(new Photo("Entrada", R.drawable.gallery_entrada1, PLACE_EXTERNO));
@@ -123,6 +129,49 @@ public class AppData {
 
     }
 
+    private static void inicializeSectorData(){
+
+        //Resources res = getResources();
+        //String[] transportString = res.getStringArray(R.array.array_transport);
+        sectorArrayList = new ArrayList<Sector>();
+
+      /*  String[] dataSplit;
+        for(String row: sectorStringArray){
+            dataSplit = row.split(";");
+
+            sectorArrayList.add(new Sector(dataSplit[1],dataSplit[2],dataSplit[3], dataSplit[4],dataSplit[5]));
+        }
+*/
+        sectorArrayList.add(new Sector(null,"Comissão Local do Ensino Remoto",
+                "Profa. Glenda Aparecida de Carvalho (Presidente)","caa-cn@cefetmg.br",null));
+        sectorArrayList.add(new Sector(null,"Diretoria do Campus Contagem",
+                null,"dc-cn@cefetmg.br",null));
+        sectorArrayList.add(new Sector("CAA","Coordenação de Assuntos Acadêmicos",
+                "Profa. Glenda Aparecida de Carvalho","caa-cn@cefetmg.br",null));
+        sectorArrayList.add(new Sector("BIBCON","Biblioteca",
+                "Questões referentes a: empréstimo e devolução de livros didáticos " +
+                "e livros do acervo em geral, orientações sobre acesso à Biblioteca Virtual e às " +
+                        "bases eletrônicas assinadas pelo CEFET- MG, orientações sobre " +
+                "consulta e reserva no sistema da biblioteca (Sophia).","bibcon@cefetmg.br","@bibliotecacefetcontagem"));
+
+        sectorArrayList.add(new Sector("CDE","Coordenação de Desenvolvimento Estudantil",
+                null,"cde-cn@cefetmg.br",null));
+        sectorArrayList.add(new Sector("CRA","Coordenação de Registro Acadêmico",
+                null,"cra-cn@cefetmg.br",null));
+        sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Controle Ambiental",
+                "Prof. Roberto Meireles Glória (Coordenador)","meirelles@cefetmg.br",null));
+        sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Eletroeletrônica",
+                "Prof. Emerson Alves da Silva (Coordenador)","emersonalves@cefetmg.br",null));
+        sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Informática",
+                "Alisson Rodrigo dos Santos (Coordenador)","alissonrs@cefetmg.br",null));
+        sectorArrayList.add(new Sector(null,"Secretaria / Recepção",
+                null,"caa-cn@cefetmg.br",null));
+
+    }
+
+    public static ArrayList<Sector> getSectorArrayList() {
+        return sectorArrayList;
+    }
 
 
 }

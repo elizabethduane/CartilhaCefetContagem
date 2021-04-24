@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -29,14 +30,21 @@ public class SliderImageAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup view, int position) {
-        View imageLayout = inflater.inflate(R.layout.slider_images_item, view, false);
+        View imageLayout = inflater.inflate(R.layout.item_slider_images, view, false);
 
         assert imageLayout != null;
         final ImageView imageView = (ImageView) imageLayout
-                .findViewById(R.id.img_slider);
+                .findViewById(R.id.photo_slider);
 
+        final TextView textView_description = (TextView) imageLayout
+                .findViewById(R.id.photo_description) ;
+
+        final TextView textView_position = (TextView) imageLayout
+                .findViewById(R.id.photo_position) ;
 
         imageView.setImageResource(mPhotoList.get(position).getPhotoId());
+        textView_description.setText(mPhotoList.get(position).getDescription());
+        textView_position.setText(position+1 + "/" +mPhotoList.size());
 
         view.addView(imageLayout, 0);
 

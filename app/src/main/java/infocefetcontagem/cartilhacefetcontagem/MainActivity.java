@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import infocefetcontagem.cartilhacefetcontagem.models.AppData;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_photos:
                     //mTextMessage.setText(R.string.title_notifications);
                     ft = fm.beginTransaction();
-                    ft.replace(R.id.fragment_content,new GalleryFragment());
+                    ft.replace(R.id.fragment_content,new SectorsFragment());
                     ft.commit();
                     return true;
             }
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AppData.inicializeData();
 
         FragmentManager fm = getSupportFragmentManager();
 

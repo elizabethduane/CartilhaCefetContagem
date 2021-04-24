@@ -96,6 +96,21 @@
         <item>5;519;Sala de Convivência (Servidores)</item>
     </string-array>
 
+    <string-array name="array_sectors">
+        <!-- id ; cod ; título ; descrição ; email ; social-->
+        <item>0;;Comissão Local do Ensino Remoto;;caa-cn@cefetmg.br; </item>
+        <item>1;DC;Diretoria do Campus Contagem;;dc-cn@cefetmg.br; </item>
+        <item>2;CAA;Coordenação de Assuntos Acadêmicos;; daa-cn@cefetmg.br; </item>
+        <item>3;BIBCON; Biblioteca; Questões referentes a: empréstimo e devolução de livros didáticos e livros do acervo em geral, orientações sobre acesso à Biblioteca Virtual e às bases eletrônicas assinadas pelo CEFET- MG, orientações sobre consulta e reserva no sistema da biblioteca (Sophia).;bibcon@cefetmg.br;@bibliotecacefetcontagem</item>
+        <item>4;CDE;Coordenação de Desenvolvimento Estudantil;;cde-cn@cefetmg.br;</item>
+        <item>5;CRA;Coordenação de Registro Acadêmico;;cra-cn@cefetmg.br;</item>
+        <item>6;;Coordenação de Gestão de Laboratórios;;glab-cn@cefetmg.br;</item>
+        <item>7;;Coordenação do Curso Técnico em Controle Ambiental Química;;meirelles@cefetmg.br;</item>
+        <item>8;;Coordenação do Curso Técnico em Eletroeletrônica;;emersonalves@cefetmg.br;</item>
+        <item>9;;Coordenação do Curso Técnico em Informática;;alissonrs@cefetmg.br;</item>
+        <item>10;CAA;Secretaria / Recepção;;caa-cn@cefetmg.br;</item>
+    </string-array>
+
     <string-array name="array_transport">
         <item>2391</item>
         <item>BAIRRO CANDIDA FERREIRA VIA CABRAL/BH</item>
@@ -126,5 +141,10 @@
     <string name="areas_externas">Áreas Externas</string>
     <string name="outros_espacos">Outros Espaços</string>
     <string name="laboratorios">Laboratórios</string>
+    <string name="title">Teste Card</string>
+    <string name="secondary_text">Olá, esse é um teste.</string>
+    <string name="supporting_text">Esse é um texto de suporte</string>
+    <string name="action_1">Ação 1</string>
+    <string name="action_2">Ação 2</string>
 
 </resources>

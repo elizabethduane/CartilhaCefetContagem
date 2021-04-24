@@ -115,6 +115,9 @@ public class SliderImageActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
+        int place_filter = AppData.PLACE_ALL;
+        List<Photo> photoList;
+
         final ViewPager viewPager = (ViewPager)findViewById(R.id.slider_view_pager);
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -125,48 +128,28 @@ public class SliderImageActivity extends AppCompatActivity {
             }
         });
 
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-       // ImageView mPhoto = (ImageView) findViewById(R.id.image_large_view);
-
-        List<Photo> photoList;
 
         if(getIntent().hasExtra("place")) {
-
-            int place_filter = getIntent().getIntExtra("place",-1);
-
-            if(place_filter == AppData.PLACE_ALL)
-                photoList = AppData.getPhotos();
-            else
-                photoList = AppData.getPhotosByPlace(place_filter);
-
-            Log.d(TAG, "onCreate: OK - " + place_filter);
-
-            viewPager.setAdapter(new SliderImageAdapter(this, photoList));
-
-            NUM_PAGES = photoList.size();
-
-            if( getIntent().hasExtra("position")){
-                currentPage = getIntent().getIntExtra("position",0);
-            }
-
-            // Auto start of viewpager
-            final Handler handler = new Handler();
-            final Runnable Update = new Runnable() {
-                public void run() {
-                    if (currentPage == NUM_PAGES) {
-                        currentPage = 0;
-                    }
-                    viewPager.setCurrentItem(currentPage++, true);
-                }
-            };
-
-
-        }else{
-            Log.d(TAG, "onCreate: NO EXTRA");
+            place_filter = getIntent().getIntExtra("place", -1);
         }
+
+        if(place_filter == AppData.PLACE_ALL)
+            photoList = AppData.getPhotos();
+        else
+            photoList = AppData.getPhotosByPlace(place_filter);
+
+        viewPager.setAdapter(new SliderImageAdapter(this, photoList));
+
+        NUM_PAGES = photoList.size();
+
+        if(getIntent().hasExtra("position")){
+            currentPage = getIntent().getIntExtra("position",0);
+        }
+
+            //set the current photo
+        viewPager.setCurrentItem(currentPage, true);
+
     }
 
     @Override

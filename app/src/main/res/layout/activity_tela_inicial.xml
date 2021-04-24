@@ -10,7 +10,7 @@
         android:id="@+id/img_fundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/visao1"
+        android:src="@drawable/tela_inicial"
         android:scaleType="centerCrop"/>
 
     <ImageView
@@ -27,13 +27,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:ellipsize="none"
+        android:fontFamily="@font/josefin_sans_light"
         android:gravity="center"
+        android:letterSpacing="0.2"
+        android:lineSpacingExtra="8sp"
+        android:lines="2"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:singleLine="false"
         android:text="@string/title_welcome"
         android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/primaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"/>
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
 
 

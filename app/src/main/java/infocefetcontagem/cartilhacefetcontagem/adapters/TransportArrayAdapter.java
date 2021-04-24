@@ -27,7 +27,7 @@ public class TransportArrayAdapter extends ArrayAdapter<Transporte> {
 
         // Cria a nova view, associando ao layout do item criado - parent é o layout pai em que o item está inserido
         if(view == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.transport_item, parent, false);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.item_transport, parent, false);
         }
 
         Transporte transporte = getItem(position);
