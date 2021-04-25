@@ -2,7 +2,6 @@ package infocefetcontagem.cartilhacefetcontagem;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,13 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.adapters.MyPhotoRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.adapters.SectorRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
-import infocefetcontagem.cartilhacefetcontagem.models.Photo;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 
 import static android.content.ContentValues.TAG;

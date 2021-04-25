@@ -3,17 +3,22 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/map_search"
-        android:title="@string/title_ambiente"/>
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home"/>
 
     <item
         android:id="@+id/navigation_photos"
-        android:icon="@drawable/information"
+        android:icon="@drawable/ic_baseline_photo_library_24"
         android:title="@string/title_photos"/>
+
+    <item
+        android:id="@+id/navigation_contacts"
+        android:icon="@drawable/ic_baseline_contact_mail_24"
+        android:title="@string/title_info"/>
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/information"
-        android:title="@string/title_info"/>
+        android:title="Sobre"/>
 
 </menu>

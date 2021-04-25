@@ -16,7 +16,6 @@ public class AppData {
     public static final int PLACE_INTERNO = 2;
 
     private static ArrayList<Sector> sectorArrayList;
-    private static ArrayList<Transporte> transporteArrayList;
     private static List<Photo> photoList;
 
     public static void inicializeData(){
@@ -24,37 +23,7 @@ public class AppData {
         inicializeSectorData();
 
     }
-    public AppData(ArrayList<String> listAllPlace) {
 
-      /*  sectorArrayList = new ArrayList<Sector>();
-        ArrayList<Place> placeArrayList = new ArrayList<Place>();
-        int floor, previewFloor = 0;
-
-        Sector currentSector = new Sector(0);
-
-        for (String linha : listAllPlace) {
-
-            String[] dados = linha.split(";");
-            floor = Integer.parseInt(dados[0]);
-
-            if (floor != previewFloor) {
-                currentSector.setPlaceList(placeArrayList);
-
-                sectorArrayList.add(currentSector);
-                currentSector = new Sector(floor);
-
-                placeArrayList = new ArrayList<Place>();
-                previewFloor = floor;
-            }
-            placeArrayList.add(new Place(dados[1], dados[2]));
-
-        }
-
-        //currentSector.setPlaceList(placeArrayList);
-        sectorArrayList.add(currentSector);
-*/
-
-    }
 
     public ArrayList<Sector> getData(){
         return sectorArrayList;
@@ -131,41 +100,68 @@ public class AppData {
 
     private static void inicializeSectorData(){
 
-        //Resources res = getResources();
-        //String[] transportString = res.getStringArray(R.array.array_transport);
         sectorArrayList = new ArrayList<Sector>();
 
-      /*  String[] dataSplit;
-        for(String row: sectorStringArray){
-            dataSplit = row.split(";");
-
-            sectorArrayList.add(new Sector(dataSplit[1],dataSplit[2],dataSplit[3], dataSplit[4],dataSplit[5]));
-        }
-*/
         sectorArrayList.add(new Sector(null,"Comissão Local do Ensino Remoto",
-                "Profa. Glenda Aparecida de Carvalho (Presidente)","caa-cn@cefetmg.br",null));
-        sectorArrayList.add(new Sector(null,"Diretoria do Campus Contagem",
-                null,"dc-cn@cefetmg.br",null));
+                null, "caa-cn@cefetmg.br",
+                new String[]{"Profa. Glenda Aparecida de Carvalho (Presidente)" }, null));
+
+        sectorArrayList.add(
+                new Sector(null,"Diretoria do Campus Contagem",
+                        null,"dc-cn@cefetmg.br",
+                        new String[]{"Prof. Gustavo Campos Menezes (Diretor)",
+                                "Luana Aparecida Barbosa Braga (Diretora Adjunta)"},
+                        null));
+
         sectorArrayList.add(new Sector("CAA","Coordenação de Assuntos Acadêmicos",
-                "Profa. Glenda Aparecida de Carvalho","caa-cn@cefetmg.br",null));
+                null,"caa-cn@cefetmg.br",
+                new String[]{"Profa. Glenda Aparecida de Carvalho"},
+                null));
+
         sectorArrayList.add(new Sector("BIBCON","Biblioteca",
-                "Questões referentes a: empréstimo e devolução de livros didáticos " +
-                "e livros do acervo em geral, orientações sobre acesso à Biblioteca Virtual e às " +
-                        "bases eletrônicas assinadas pelo CEFET- MG, orientações sobre " +
-                "consulta e reserva no sistema da biblioteca (Sophia).","bibcon@cefetmg.br","@bibliotecacefetcontagem"));
+                null,
+                "bibcon@cefetmg.br",
+                new String[]{"Fabiana Pés do Nascimento",
+                        "Francilene Ramos Lourenço Soares (Chefe)",
+                        "Webert Júnio Araújo"},
+                "@bibliotecacefetcontagem"));
 
         sectorArrayList.add(new Sector("CDE","Coordenação de Desenvolvimento Estudantil",
-                null,"cde-cn@cefetmg.br",null));
+                "more details","cde-cn@cefetmg.br",
+                new String[]{"Clarice de Paula Gouveia",
+                        "Dilene Pinheiro da Silva",
+                        "Luiza Moraes Candido (Chefe)"
+                },
+                null));
+
         sectorArrayList.add(new Sector("CRA","Coordenação de Registro Acadêmico",
-                null,"cra-cn@cefetmg.br",null));
+                null,
+                "cra-cn@cefetmg.br",
+                new String[]{"Cassia Beatriz da Silva",
+                "Dheison Ramos de Sousa (Chefe)",
+                "Viviane de Paula Zamboni"},
+                null));
+
         sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Controle Ambiental",
-                "Prof. Roberto Meireles Glória (Coordenador)","meirelles@cefetmg.br",null));
+                null,"meirelles@cefetmg.br",
+                new String[]{"Prof. Roberto Meireles Glória (Coordenador)" },
+                null));
+
         sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Eletroeletrônica",
-                "Prof. Emerson Alves da Silva (Coordenador)","emersonalves@cefetmg.br",null));
+                null,"emersonalves@cefetmg.br",
+                new String[]{"Prof. Emerson Alves da Silva (Coordenador)" },
+                null));
+
         sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Informática",
-                "Alisson Rodrigo dos Santos (Coordenador)","alissonrs@cefetmg.br",null));
+                null,"alissonrs@cefetmg.br",
+                new String[]{"Alisson Rodrigo dos Santos (Coordenador)"},
+                null));
+
         sectorArrayList.add(new Sector(null,"Secretaria / Recepção",
-                null,"caa-cn@cefetmg.br",null));
+                null,"caa-cn@cefetmg.br",
+                new String[]{"Clébia Silva",
+                        "Luciana de Freitas Setragni"},
+                null));
 
     }
 

@@ -4,58 +4,170 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="8dp">
-
+    android:paddingBottom="16dp"
+    >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        app:cardBackgroundColor="@color/primaryTextColor">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/textView_sector_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Titulo"
                     android:background="@color/primaryLightColor"
-                    android:textColor="@color/primaryTextColor"
-                    android:textStyle="bold"
                     android:padding="8dp"
+                    android:text="Titulo"
+                    android:textColor="@color/primaryTextColor"
                     android:textSize="14dp"
-                    />
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/contacts_sector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView_sector_description"
+                    android:id="@+id/textView_sector_contact1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="descrição"
-                    android:paddingTop="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="contato1"
+                    android:textSize="14dp"
+                    android:textColor="@color/secondaryTextColor"/>
+
+                <TextView
+                    android:id="@+id/textView_sector_contact2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:paddingHorizontal="8dp"
-                    android:textSize="14dp"/>
+                    android:paddingBottom="8dp"
+                    android:text="contato2"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    android:textColor="@color/secondaryTextColor"/>
+
+                <TextView
+                    android:id="@+id/textView_sector_contact3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingHorizontal="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="contato3"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    android:textColor="@color/secondaryTextColor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                >
+
+                <View style="@style/Divider.Horizontal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                >
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_mail_outline_24" />
 
                 <TextView
                     android:id="@+id/textView_sector_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="14dp"
-                    android:padding="8dp"
-                    android:text="E-mail do setor: " />
-
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="E-mail do setor: "
+                    android:textSize="16dp"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textIsSelectable="true"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="8dp"
+                android:clickable="true"
+                >
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icons8_instagram_96"
+                    android:id="@+id/icon_social"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/textView_sector_social"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="social"
+                    android:textSize="16dp"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textIsSelectable="true"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/more_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mais Informações"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="8dp"
+                    android:background="@color/secondaryColor"
+                    android:textColor="@color/secondaryTextColor"
+                    android:clickable="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

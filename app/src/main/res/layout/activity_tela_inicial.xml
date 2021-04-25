@@ -38,7 +38,7 @@
         android:shadowDy="5"
         android:shadowRadius="5"
         android:singleLine="false"
-        android:text="@string/title_welcome"
+        android:text="@string/title_campus"
         android:textAllCaps="true"
         android:textColor="@color/primaryTextColor"
         android:textSize="50sp"

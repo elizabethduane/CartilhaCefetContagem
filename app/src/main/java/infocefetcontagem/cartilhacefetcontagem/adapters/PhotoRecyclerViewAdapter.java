@@ -17,13 +17,13 @@ import java.util.List;
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyPhotoRecyclerViewAdapter extends RecyclerView.Adapter<MyPhotoRecyclerViewAdapter.ViewHolder>
+public class PhotoRecyclerViewAdapter extends RecyclerView.Adapter<PhotoRecyclerViewAdapter.ViewHolder>
 implements View.OnClickListener{
 
     private final List<Photo> mValues;
     OnItemListener mOnItemListener;
 
-    public MyPhotoRecyclerViewAdapter(List<Photo> items, OnItemListener mOnItemListener) {
+    public PhotoRecyclerViewAdapter(List<Photo> items, OnItemListener mOnItemListener) {
         mValues = items;
         this.mOnItemListener = mOnItemListener;
     }

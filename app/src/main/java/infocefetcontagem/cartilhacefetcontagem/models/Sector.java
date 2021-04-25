@@ -13,23 +13,16 @@ public class Sector implements Serializable {
     private String email;
     private String social;
 
-   // private int idImg;
 
-   // private final int[] images = new int[]{R.drawable.};
-   // private final ArrayList<Place> placeList = new ArrayList<Place>();
-    //private ArrayList<Contact> placeList = new ArrayList<Place>();
-
-    public Sector(String cod, String title, String description, String email, String social){
+    public Sector(String cod, String title, String description, String email, String[] contacts, String social){
         this.cod = cod;
         this.title = title;
         this.description = description;
         this.email = email;
         this.social = social;
+        this.contacts = contacts;
     }
 
-   /* public void setPlaceList(ArrayList<Place> placeList) {
-        this.placeList = placeList;
-    }*/
 
     public String getCod() {
         return cod;
@@ -63,6 +56,16 @@ public class Sector implements Serializable {
         this.email = email;
     }
 
+    public String[] getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(String[] contacts) {
+        this.contacts = contacts;
+    }
+
+    private String[] contacts;
+
     public String getSocial() {
         return social;
     }
@@ -70,5 +73,6 @@ public class Sector implements Serializable {
     public void setSocial(String social) {
         this.social = social;
     }
+
 
 }

@@ -1,100 +1,29 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">CEFET-MG Contagem</string>
     <string name="title_ambiente">Ambientes</string>
     <string name="title_info">Contatos Úteis</string>
     <string name="title_photos">Fotos</string>
-    <string name="title_welcome">Unidade Contagem</string>
-    <string name="address">Alameda das Perdizes, 61, Bairro Cabral, Contagem-MG, 32146-054</string>
-    <string name="linha_bus">Linha:</string>
-    <string name="tarifa_bus">Tarifa:</string>
-    <string name="descricao_linha_bus">BAIRRO CANDIDA FERREIRA VIA CABRAL/BH</string>
-
-    <string-array name="array_place">
-        <item>0;P1;Portaria</item>
-        <item>0;A1;Auditório</item>
-        <item>0;L1;Lanchonete</item>
-        <item>0;R1;Restaurante</item>
-        <item>1;101A;Papelaria</item>
-        <item>1;101B;Grêmio</item>
-        <item>1;102;Lab. Informática 1</item>
-        <item>1;103;Conservo</item>
-        <item>1;104;Lab. Informática 2</item>
-        <item>1;105;Lab. Arquitetura de Computadores</item>
-        <item>1;106;Lab. Informática 3</item>
-        <item>1;107;Lab. Redes e Sist. Distribuídos</item>
-        <item>1;108;Lab. Circuitos Elétricos</item>
-        <item>1;109;Lab. Sistemas Digitais</item>
-        <item>1;110;Lab. Máquinas Elétricas</item>
-        <item>1;111;Lab. Automação de Sistemas Elétricos</item>
-        <item>1;112;Lab. Sistemas Eletrônicos</item>
-        <item>1;113;Sala do Laboratorista (Larissa)</item>
-        <item>2;202;Sala de Aula (EElt 1)</item>
-        <item>2;203;Sala de Aula (Info 2)</item>
-        <item>2;204;Sala de Aula (Info 1)</item>
-        <item>2;205;Sala de Aula (Camb 2)</item>
-        <item>2;206;Sala de Aula (Camb 1)</item>
-        <item>2;207;Biblioteca (fundos)</item>
-        <item>2;208;Sala de Aula (EElt 2)</item>
-        <item>2;210;Sala de Aula</item>
-        <item>2;212;Sala de Aula</item>
-        <item>2;213;Biblioteca (vidro)</item>
-        <item>3;301;Sala de Aula</item>
-        <item>3;302;Mini-auditório</item>
-        <item>3;303;Sala de Aula</item>
-        <item>3;304;Materiais</item>
-        <item>3;305;Sala de Aula</item>
-        <item>3;306;Lab. Física</item>
-        <item>3;307;Sala de Aula</item>
-        <item>3;308;Sala de Aula</item>
-        <item>3;309;Sala de Aula (Camb 3)</item>
-        <item>3;310A;Lab. de Pesquisa (Bic-Jnr)</item>
-        <item>3;310B;Lab. de Eletroeletrônica (aluno)</item>
-        <item>3;310C;Lab. Informática (aluno)</item>
-        <item>3;311;Sala de Aula (Info 3)</item>
-        <item>3;313;Sala de Aula (EElt 3)</item>
-        <item>4;401B;Prefeitura</item>
-        <item>4;401C;Divisão de Laboratórios (Thiago)</item>
-        <item>4;402;Lab. Química Orgânica</item>
-        <item>4;403;Lab. Química</item>
-        <item>4;404;Lab. Química Analítica</item>
-        <item>4;405;Lab. Processos Industriais</item>
-        <item>4;406;Almoxarifado (Química)</item>
-        <item>4;407;Lab. Quím. Inorgânica e Físico - Química</item>
-        <item>4;408;Lab. Microbiologia</item>
-        <item>4;409;Lab. Mineralogia</item>
-        <item>4;410;Sala de Aula</item>
-        <item>4;411;Sala de Aula</item>
-        <item>4;413;Sala de Aula</item>
-        <item> 5;501;Recepção</item>
-        <item>5;501A;Secretaria</item>
-        <item>5;501B;Administração</item>
-        <item>5;501C;Arquivo</item>
-        <item>5;502;Registro Escolar</item>
-        <item>5;502A;Registro Escolar</item>
-        <item>5;503;Sala de Reunião</item>
-        <item>5;504;Diretoria</item>
-        <item>5;504A;Diretor</item>
-        <item>5;504B;Diretoria Adjunta</item>
-        <item>5;505;Coordenações de Curso</item>
-        <item>5;506A;Sala de Atendimento (Assistência Social)</item>
-        <item>5;506A;Sala de Atendimento (Psicologia)</item>
-        <item>5;506B;Coord. de Política Estudantil</item>
-        <item>5;507;Coordenação de Informática</item>
-        <item>5;507;Chefia de Departamento (DELCOM)</item>
-        <item>5;508A;Sala de Atendimento (Coord. Pedagógica)</item>
-        <item>5;508B;Coordenação Pedagógica</item>
-        <item>5;509;Coordenação de Controle Ambiental</item>
-        <item>5;509;Chefia de Departamento (DECAQ)</item>
-        <item>5;510B;Sala de Reunião</item>
-        <item>5;511;Coordenação de Eletroeletrônica</item>
-        <item>5;511;Coordenação Acadêmica</item>
-        <item>5;512;Setor de Tecnologia da Informação </item>
-        <item>5;513;Chefia de Departamento da Formação Geral</item>
-        <item>5;515;Gabinete de Professores</item>
-        <item>5;516;Gabinete de Professores</item>
-        <item>5;517;Gabinete de Professores</item>
-        <item>5;519;Sala de Convivência (Servidores)</item>
-    </string-array>
+    <string name="title_campus">Unidade Contagem</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_image_view">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="areas_externas">Áreas Externas</string>
+    <string name="outros_espacos">Outros Espaços</string>
+    <string name="laboratorios">Laboratórios</string>
+    <string name="title">Teste Card</string>
+    <string name="secondary_text">Olá, esse é um teste.</string>
+    <string name="supporting_text">Esse é um texto de suporte</string>
+    <string name="action_1">Ação 1</string>
+    <string name="action_2">Ação 2</string>
+    <string name="description_pedagogy">Questões referentes a: Organização dos estudos, desenvolvimento da autonomia, estratégias de aprendizagem, monitorias e normas acadêmicas.</string>
+    <string name="description_pshycologist">Questões referentes a: Programa de Bolsas, Programa de Inclusão Digital e atendimento/acompanhamento psicossocial.</string>
+    <string name="email_dilene">dilene@cefetmg.br</string>
+    <string name="description_social">Questões referentes a: Programa de Bolsas, Programa de Inclusão Digital e atendimento/acompanhamento psicossocial.</string>
+    <string name="home">Home</string>
+    <string name="address">Alameda das Perdizes, 61 - Bairro Cabral </string>
+    <string name="address2">Contagem/MG - CEP: 32146-054</string>
+    <string name="phone">Telefone: (31) 3368-4300 / (31) 3368-4302 </string>
 
     <string-array name="array_sectors">
         <!-- id ; cod ; título ; descrição ; email ; social-->
@@ -111,40 +40,8 @@
         <item>10;CAA;Secretaria / Recepção;;caa-cn@cefetmg.br;</item>
     </string-array>
 
-    <string-array name="array_transport">
-        <item>2391</item>
-        <item>BAIRRO CANDIDA FERREIRA VIA CABRAL/BH</item>
-        <item>R$ 4,75</item>
-        <item>http://www.consultas.der.mg.gov.br/grgx/sgtm/consulta_linha.xhtml</item>
-        <item>2310</item>
-        <item>NACIONAL/BOM JESUS VIA BR-040/BELO HORIZONTE</item>
-        <item>R$ 4,75</item>
-        <item>http://www.consultas.der.mg.gov.br/grgx/sgtm/consulta_linha.xhtml</item>
-        <item>2381</item>
-        <item>JARDIM ALVORADA VIA BR 040/BELO HORIZONTE</item>
-        <item>R$ 4,75</item>
-        <item>http://www.consultas.der.mg.gov.br/grgx/sgtm/consulta_linha.xhtml</item>
-        <item>570</item>
-        <item>CIDADE INDUSTRIAL VIA METRÔ</item>
-        <item>R$ 4,05</item>
-        <item>http://www.consultas.der.mg.gov.br/grgx/sgtm/consulta_linha.xhtml</item>
-        <item>101D</item>
-        <item>VALE DAS AMENDOEIRAS/CIDADE INDUSTRIAL </item>
-        <item>R$ 4,05</item>
-        <item>http://www.contagem.mg.gov.br/horario-de-onibus/</item>
-    </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_image_view">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="areas_externas">Áreas Externas</string>
-    <string name="outros_espacos">Outros Espaços</string>
-    <string name="laboratorios">Laboratórios</string>
-    <string name="title">Teste Card</string>
-    <string name="secondary_text">Olá, esse é um teste.</string>
-    <string name="supporting_text">Esse é um texto de suporte</string>
-    <string name="action_1">Ação 1</string>
-    <string name="action_2">Ação 2</string>
+
+
+
 
 </resources>

@@ -1,5 +1,7 @@
 package infocefetcontagem.cartilhacefetcontagem;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,27 +18,15 @@ import android.widget.ViewFlipper;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import infocefetcontagem.cartilhacefetcontagem.adapters.ExpandableListAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 
 public class MainFragment extends Fragment {
 
-    ArrayList<Sector> sectorList;
-    ExpandableListAdapter adapter;
-    ExpandableListView listView;
-    ViewFlipper viewFlipper;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-        ArrayList<String> placeArrayListAll = new ArrayList<String>();
-        placeArrayListAll.addAll(Arrays.asList(getResources().getStringArray(R.array.array_place)));
-
-        AppData ld = new AppData(placeArrayListAll);
-        sectorList = ld.getData();
 
     }
 
@@ -45,40 +35,48 @@ public class MainFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        listView = (ExpandableListView) view.findViewById(R.id.listViewFloor);
+        ImageView icon_facebook = (ImageView) view.findViewById(R.id.icon_facebook);
+        ImageView icon_instagram = (ImageView) view.findViewById(R.id.icon_instagram);
+        ImageView icon_twitter= (ImageView) view.findViewById(R.id.icon_twitter);
+        ImageView icon_linkedin = (ImageView) view.findViewById(R.id.icon_linkedin);
 
-        //adapter = new ExpandableListAdapter(container.getContext(), sectorList);
-       // listView.setAdapter(adapter);
+        icon_facebook.setClickable(true);
+        icon_facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickSocial(view);
+            }
+        });
 
-        //start the first floor expanded
-      //  listView.expandGroup(0);
+        icon_twitter.setClickable(true);
+        icon_twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickSocial(view);
+            }
+        });
 
+        icon_instagram.setClickable(true);
+        icon_instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickSocial(view);
+            }
+        });
 
-        /*int images[] = {R.drawable.visao1, R.drawable.portaria_campus2, R.drawable.predio2};
-
-        viewFlipper = view.findViewById(R.id.view_flipper);
-
-        for(int image:images){
-            flipperImages(image, container);
-        }*/
-
+        icon_linkedin.setClickable(true);
+        icon_linkedin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickSocial(view);
+            }
+        });
 
         return view;
 
     }
 
-    public  void flipperImages(int image, ViewGroup container){
-        ImageView imageView = new ImageView(container.getContext());
-        imageView.setBackgroundResource(image);
 
-        viewFlipper.addView(imageView);
-        viewFlipper.setFlipInterval(4000);
-        viewFlipper.setAutoStart(true);
-
-       // viewFlipper.setInAnimation(container.getContext(), R.anim.transicao_fade_in);
-       // viewFlipper.setOutAnimation(container.getContext(), R.anim.transicao_fade_in);
-
-    }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -103,10 +101,28 @@ public class MainFragment extends Fragment {
         });
     }
 
-    private void expandAll() {
-       /* int count = adapter.getGroupCount();
-        for (int i = 0; i < count; i++){
-            listView.expandGroup(i);
-        }*/
+    public void onClickSocial(View view){
+
+        String url = "www.cefetmg.br";
+
+        switch (view.getId()){
+            case R.id.icon_facebook:
+                url = "https://www.facebook.com/cefetmgcontagem/?fref=ts";
+                break;
+            case R.id.icon_instagram:
+                url = "https://www.instagram.com/cefetmg_contagem/";
+                break;
+            case R.id.icon_linkedin:
+                url = "https://www.linkedin.com/edu/school?id=10506&trk=prof-following-school-logo";
+                break;
+            case R.id.icon_twitter:
+                url = "https://twitter.com/cefet_mg";
+                break;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
+
 }

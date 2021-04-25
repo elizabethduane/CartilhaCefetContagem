@@ -2,25 +2,151 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
 
-        <ImageView
-            android:id="@+id/img_fundo"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/visao1"
-            android:scaleType="centerCrop"/>
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_fundo"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/gallery_entrada2"
+                    android:scaleType="centerCrop"/>
 
-        <!--ViewFlipper
-            android:id="@+id/view_flipper"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"/-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FFFFFF"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_cefet_blue"
+                    android:layout_alignBottom="@id/space1"
+                    android:layout_marginLeft="8dp"
+                    />
+                <View
+                    android:id="@+id/space1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/img_fundo"
+                    />
 
-        <ExpandableListView
-            android:id="@+id/listViewFloor"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_campus"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray30"
+                    android:layout_below="@id/img_fundo"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/josefin_sans_light"
+
+                    />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:dividerHeight="0.0dp"/>
+            android:layout_height="150dp"
+            android:layout_below="@id/img_fundo">
+
+                <TextView
+                    android:id="@+id/text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fotos e principais contatos"
+                    android:layout_centerInParent="true"
+                    android:textSize="24sp"
+                    android:textColor="@color/gray30"
+                    android:fontFamily="@font/josefin_sans_light"
+                    />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_above="@id/layout_address"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/layout_group_social">
+
+                <ImageView
+                    android:id="@+id/icon_facebook"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icons8_facebook_96"
+                    android:layout_marginRight="4dp"/>
+
+                <ImageView
+                    android:id="@+id/icon_instagram"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icons8_instagram_96"
+                    android:layout_marginRight="4dp"/>
+
+                <ImageView
+                    android:id="@+id/icon_linkedin"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icons8_linkedin_96"
+                    android:layout_marginRight="4dp"/>
+
+                <ImageView
+                    android:id="@+id/icon_twitter"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icons8_twitter_squared_96"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/layout_address">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"
+                    android:textIsSelectable="true"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/gray30"
+                    android:fontFamily="@font/josefin_sans_light"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address2"
+                    android:textIsSelectable="true"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/gray30"
+                    android:fontFamily="@font/josefin_sans_light"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phone"
+                    android:textSize="20sp"
+                    android:textIsSelectable="true"
+                    android:textAlignment="center"
+
+                    android:textColor="@color/gray30"
+                    android:fontFamily="@font/josefin_sans_light"/>
+        </LinearLayout>
+
+
+
+
 
 </LinearLayout>

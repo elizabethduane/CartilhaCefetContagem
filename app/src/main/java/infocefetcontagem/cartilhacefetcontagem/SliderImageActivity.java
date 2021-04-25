@@ -176,6 +176,8 @@ public class SliderImageActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
+        actionBar.setTitle("");
         mControlsView.setVisibility(View.GONE);
         mVisible = false;
 
