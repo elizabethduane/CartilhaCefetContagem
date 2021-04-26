@@ -20,11 +20,12 @@ public class TelaInicial extends AppCompatActivity {
         ImageView img_fundo = (ImageView) findViewById(R.id.img_fundo);
         img_fundo.startAnimation(animacaoFundo);
 
-
         Animation animacao = AnimationUtils.loadAnimation(this,R.anim.transicao_fade_in);
         TextView tv_welcome = (TextView)findViewById(R.id.textView_welcome);
         tv_welcome.startAnimation(animacao);
 
+        ImageView img_logo = (ImageView) findViewById(R.id.logo_cefetmg);
+        img_logo.startAnimation(animacao);
 
         Handler handle = new Handler();
 
@@ -33,7 +34,7 @@ public class TelaInicial extends AppCompatActivity {
             public void run() {
                 mostrarMain();
             }
-        }, 3000);
+        }, 3500);
 
     }
 

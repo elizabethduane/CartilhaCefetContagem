@@ -1,9 +1,6 @@
 package infocefetcontagem.cartilhacefetcontagem.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-
-import infocefetcontagem.cartilhacefetcontagem.R;
 
 public class Sector implements Serializable {
 
@@ -12,15 +9,15 @@ public class Sector implements Serializable {
     private String description;
     private String email;
     private String social;
+    private String[] phone;
+    private String urlSocial;
 
 
-    public Sector(String cod, String title, String description, String email, String[] contacts, String social){
+    public Sector(String cod, String title, String email, String[] contacts){
         this.cod = cod;
         this.title = title;
-        this.description = description;
         this.email = email;
-        this.social = social;
-        this.contacts = contacts;
+        this.nameContacts = contacts;
     }
 
 
@@ -56,15 +53,15 @@ public class Sector implements Serializable {
         this.email = email;
     }
 
-    public String[] getContacts() {
-        return contacts;
+    public String[] getNameContacts() {
+        return nameContacts;
     }
 
-    public void setContacts(String[] contacts) {
-        this.contacts = contacts;
+    public void setNameContacts(String[] nameContacts) {
+        this.nameContacts = nameContacts;
     }
 
-    private String[] contacts;
+    private String[] nameContacts;
 
     public String getSocial() {
         return social;
@@ -73,6 +70,23 @@ public class Sector implements Serializable {
     public void setSocial(String social) {
         this.social = social;
     }
+
+    public String[] getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String[] phone) {
+        this.phone = phone;
+    }
+
+    public String getUrlSocial() {
+        return urlSocial;
+    }
+
+    public void setUrlSocial(String urlSocial) {
+        this.urlSocial = urlSocial;
+    }
+
 
 
 }

@@ -23,7 +23,10 @@
     <string name="home">Home</string>
     <string name="address">Alameda das Perdizes, 61 - Bairro Cabral </string>
     <string name="address2">Contagem/MG - CEP: 32146-054</string>
-    <string name="phone">Telefone: (31) 3368-4300 / (31) 3368-4302 </string>
+    <string name="phone">Telefone: (31) 3368–4300 / (31) 3368-4302 </string>
+    <string name="main_link">www.contagem.cefetmg.br</string>
+    <string name="main_welcome">Olá! Seja bem-vindo(a)!</string>
+    <string name="main_description">Aqui você encontra fotos do nosso Campus e os principais contatos para você ficar conectado no Ensino Remoto Emergencial.</string>
 
     <string-array name="array_sectors">
         <!-- id ; cod ; título ; descrição ; email ; social-->
@@ -39,9 +42,6 @@
         <item>9;;Coordenação do Curso Técnico em Informática;;alissonrs@cefetmg.br;</item>
         <item>10;CAA;Secretaria / Recepção;;caa-cn@cefetmg.br;</item>
     </string-array>
-
-
-
 
 
 </resources>

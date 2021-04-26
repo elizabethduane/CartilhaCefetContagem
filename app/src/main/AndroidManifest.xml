@@ -9,17 +9,14 @@
         android:roundIcon="@drawable/school"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".models.CDEActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".SliderImageActivity"></activity>
         <activity
-            android:name=".SliderImageActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_image_view"
-            android:theme="@style/AppTheme.Fullscreen" />
+            android:name=".CDEActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:launchMode="singleTop"
             android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
         <activity
             android:name=".TelaInicial"
             android:theme="@style/AppCompat.TelaCheia">
@@ -33,6 +30,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

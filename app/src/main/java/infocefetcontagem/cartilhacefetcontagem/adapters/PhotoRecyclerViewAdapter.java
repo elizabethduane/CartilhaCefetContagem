@@ -75,10 +75,6 @@ implements View.OnClickListener{
 
         }
 
-        /*@Override
-       /* public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
-        }*/
     }
 
     public interface OnItemListener{

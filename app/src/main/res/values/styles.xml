@@ -21,17 +21,27 @@
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
-    <style name="Divider">
+    <style name="DividerSecondary">
         <item name="android:background">@color/secondaryColor</item> <!--//you can give your color here. that will change all divider color in your app.-->
     </style>
 
-    <style name="Divider.Horizontal" parent="Divider">
+    <style name="DividerPrimary">
+        <item name="android:background">@color/primaryColor</item> <!--//you can give your color here. that will change all divider color in your app.-->
+    </style>
+
+    <style name="Divider.HorizontalPrimary" parent="DividerPrimary">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item> <!--// You can change thickness here.-->
 
     </style>
 
-    <style name="Divider.Vertical" parent="Divider">
+    <style name="Divider.HorizontalSecondary" parent="DividerSecondary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item> <!--// You can change thickness here.-->
+
+    </style>
+
+    <style name="Divider.Vertical" parent="DividerSecondary">
         <item name="android:layout_width">1dp</item>
         <item name="android:layout_height">match_parent</item>
     </style>

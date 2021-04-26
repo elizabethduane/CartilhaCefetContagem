@@ -16,9 +16,5 @@
         android:icon="@drawable/ic_baseline_contact_mail_24"
         android:title="@string/title_info"/>
 
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/information"
-        android:title="Sobre"/>
 
 </menu>

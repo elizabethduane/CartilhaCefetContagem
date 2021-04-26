@@ -1,6 +1,8 @@
 package infocefetcontagem.cartilhacefetcontagem;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 
 import static android.content.ContentValues.TAG;
+import static android.os.Build.VERSION_CODES.M;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,6 +70,7 @@ public class SectorsFragment extends Fragment implements SectorRecyclerViewAdapt
         }
     }
 
+    @RequiresApi(api = M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -82,6 +87,13 @@ public class SectorsFragment extends Fragment implements SectorRecyclerViewAdapt
         mSectorList = AppData.getSectorArrayList();
 
         recyclerViewSector.setAdapter(new SectorRecyclerViewAdapter(mSectorList,this));
+
+        Window window = this.getActivity().getWindow();
+        window.setStatusBarColor(this.getResources().getColor(R.color.gray_background));
+
+        if (Build.VERSION.SDK_INT >= M) {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//  set status text dark
+        }
 
         return view;
     }

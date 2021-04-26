@@ -3,29 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/white">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/img_fundo"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/gallery_entrada2"
-                    android:scaleType="centerCrop"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginBottom="16dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    app:civ_border_width="2dp"
-                    app:civ_border_color="#FFFFFF"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/logo_cefet_blue"
-                    android:layout_alignBottom="@id/space1"
-                    android:layout_marginLeft="8dp"
-                    />
+            <ImageView
+                android:id="@+id/img_fundo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/gallery_entrada_home"
+                android:scaleType="centerCrop"
+                />
+
                 <View
                     android:id="@+id/space1"
                     android:layout_width="50dp"
@@ -33,120 +34,160 @@
                     android:layout_below="@id/img_fundo"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title_campus"
-                    android:textSize="20sp"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"
-                    android:textColor="@color/gray30"
-                    android:layout_below="@id/img_fundo"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/josefin_sans_light"
-
-                    />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@id/img_fundo">
-
-                <TextView
-                    android:id="@+id/text_home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fotos e principais contatos"
-                    android:layout_centerInParent="true"
-                    android:textSize="24sp"
-                    android:textColor="@color/gray30"
-                    android:fontFamily="@font/josefin_sans_light"
-                    />
-
-        </RelativeLayout>
+                        <de.hdodenhof.circleimageview.CircleImageView
+                           android:id="@+id/logo_circle"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="@color/white"
+                            android:scaleType="centerCrop"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/logo_cefet_blue"
+                            android:layout_alignBottom="@id/space1"
+                            />
+            </RelativeLayout>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_above="@id/layout_address"
-            android:layout_marginBottom="16dp"
-            android:id="@+id/layout_group_social">
+        <View
+            android:id="@+id/space_center"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
 
-                <ImageView
-                    android:id="@+id/icon_facebook"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icons8_facebook_96"
-                    android:layout_marginRight="4dp"/>
-
-                <ImageView
-                    android:id="@+id/icon_instagram"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icons8_instagram_96"
-                    android:layout_marginRight="4dp"/>
-
-                <ImageView
-                    android:id="@+id/icon_linkedin"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icons8_linkedin_96"
-                    android:layout_marginRight="4dp"/>
-
-                <ImageView
-                    android:id="@+id/icon_twitter"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icons8_twitter_squared_96"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp"
-            android:id="@+id/layout_address">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/address"
-                    android:textIsSelectable="true"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/gray30"
-                    android:fontFamily="@font/josefin_sans_light"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/address2"
-                    android:textIsSelectable="true"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/gray30"
-                    android:fontFamily="@font/josefin_sans_light"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/phone"
-                    android:textSize="20sp"
-                    android:textIsSelectable="true"
-                    android:textAlignment="center"
-
-                    android:textColor="@color/gray30"
-                    android:fontFamily="@font/josefin_sans_light"/>
-        </LinearLayout>
+            />
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_alignTop="@id/space_center"
+                >
 
+
+                        <TextView
+                            android:id="@+id/text_unidadeBem_vindo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/main_welcome"
+                            android:textColor="@color/text_color"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                           android:layout_centerHorizontal="true"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:lineSpacingExtra="8sp"
+                            android:text="@string/main_description"
+                            android:textAlignment="center"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/normal_text"
+                            android:layout_below="@+id/text_unidadeBem_vindo"/>
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/layout_social_address"
+                android:layout_alignParentBottom="true">
+
+                    <TextView
+                        android:id="@+id/main_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:autoLink="web"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/main_link"
+                        android:textColor="@color/gray30"
+                        android:textSize="@dimen/normal_text"
+                        android:layout_marginBottom="8dp"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:id="@+id/layout_group_social">
+
+                            <ImageView
+                                android:id="@+id/icon_facebook"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/icons8_facebook_96"
+                                android:layout_marginRight="8dp"/>
+
+                            <ImageView
+                                android:id="@+id/icon_instagram"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/icons8_instagram_96"
+                                android:layout_marginRight="8dp"/>
+
+                            <ImageView
+                                android:id="@+id/icon_linkedin"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/icons8_linkedin_96"
+                                android:layout_marginRight="8dp"/>
+
+                            <ImageView
+                                android:id="@+id/icon_twitter"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/icons8_twitter_96"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/address"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textIsSelectable="true"
+                        android:textSize="@dimen/subtitle"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/address2"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textIsSelectable="true"
+                        android:textSize="@dimen/subtitle"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/phone"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_color"
+                        android:textIsSelectable="true"
+                        android:textSize="@dimen/subtitle"
+                       />
+            </LinearLayout>
+
+    </RelativeLayout>
 
 
 </LinearLayout>

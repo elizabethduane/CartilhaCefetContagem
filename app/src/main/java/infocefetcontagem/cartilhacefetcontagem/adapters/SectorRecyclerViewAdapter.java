@@ -1,28 +1,26 @@
 package infocefetcontagem.cartilhacefetcontagem.adapters;
 
-import android.animation.TimeAnimator;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.support.annotation.LongDef;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.SliderImageActivity;
 import infocefetcontagem.cartilhacefetcontagem.dummy.DummyContent.DummyItem;
-import infocefetcontagem.cartilhacefetcontagem.models.AppData;
-import infocefetcontagem.cartilhacefetcontagem.models.CDEActivity;
+import infocefetcontagem.cartilhacefetcontagem.CDEActivity;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 /**
@@ -64,14 +62,14 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
 
         holder.title.setText(title);
 
-        String [] contacts = holder.mItem.getContacts();
+        String [] contacts = holder.mItem.getNameContacts();
 
         Log.d(TAG, "onBindViewHolder: " + contacts);
 
         holder.contact1.setText(contacts[0]);
 
-        holder.contact2.setVisibility(View.GONE);
-        holder.contact3.setVisibility(View.GONE);
+        holder.contact2.setVisibility(GONE);
+        holder.contact3.setVisibility(GONE);
 
         if(contacts.length > 1){
             holder.contact2.setText(contacts[1]);
@@ -85,6 +83,8 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
 
         if(holder.mItem.getDescription() != null){
             holder.moreDetails.setVisibility(VISIBLE);
+        }else{
+            holder.moreDetails.setVisibility(GONE);
         }
 
         holder.email.setText(holder.mItem.getEmail());
@@ -93,6 +93,16 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
             holder.social.setText(holder.mItem.getSocial());
             holder.social.setVisibility(VISIBLE);
             holder.socialIcon.setVisibility(VISIBLE);
+        }else {
+            holder.social.setVisibility(GONE);
+            holder.socialIcon.setVisibility(GONE);
+        }
+
+        if(holder.mItem.getPhone() != null){
+            holder.phone.setText(holder.mItem.getPhone()[0]);
+            holder.phoneGroup.setVisibility(VISIBLE);
+        }else{
+            holder.phoneGroup.setVisibility(GONE);
         }
     }
 
@@ -116,6 +126,9 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
         public final TextView social;
         public final ImageView socialIcon;
         public final TextView moreDetails;
+        public final TextView phone;
+        public final LinearLayout phoneGroup;
+        public final LinearLayout socialGroup;
 
         OnSectorItemListener onItemListener;
 
@@ -130,6 +143,9 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
             moreDetails = (TextView) view.findViewById(R.id.more_details);
             social = (TextView) view.findViewById(R.id.textView_sector_social);
             socialIcon = (ImageView) view.findViewById(R.id.icon_social);
+            phone = (TextView) view.findViewById(R.id.textView_sector_phone);
+            phoneGroup = (LinearLayout) view.findViewById(R.id.group_phone);
+            socialGroup = (LinearLayout) view.findViewById(R.id.layout_social_group);
 
             email.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -145,6 +161,20 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
                     onClickDetails(v);
                 }
 
+            });
+
+           socialIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickSocial(view);
+                }
+            });
+
+            social.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickSocial(view);
+                }
             });
             //this.onItemListener = onItemListener;
             //itemView.setOnClickListener(this);
@@ -162,26 +192,18 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
         }
 
         public void onClickDetails(View view){
-            Log.d(TAG, "onClickDetails: "+ this.title.getText());
 
             Intent intent = new Intent(mContext, CDEActivity.class);
 
             mContext.startActivity(intent);
 
-        /*Photo photo = new Photo();
-        List<Photo> photos = photo.getPhotosByPlace(0);
-        photo = photos.get(position);
-
-        intent.putExtra("photoId", photo.getPhotoId());
-        startActivity(intent);*/
-
-
         }
 
-        /*@Override
-       /* public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
-        }*/
+        public void onClickSocial(View view){
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(mItem.getUrlSocial()));
+            mContext.startActivity(intent);
+        }
     }
 
     public interface OnSectorItemListener{

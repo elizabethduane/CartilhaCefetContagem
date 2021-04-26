@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#004784</color>
-    <color name="primaryLightColor">#4872b4</color>
-    <color name="primaryDarkColor">#002157</color>
+    <color name="primaryColor">#115b91</color>
+    <color name="primaryLightColor">#115b91</color>
+    <color name="primaryDarkColor">#003869</color>
     <color name="secondaryColor">#f9aa33</color>
     <color name="secondaryLightColor">#ffdc65</color>
     <color name="secondaryDarkColor">#c17b00</color>
@@ -16,8 +16,13 @@
     <color name="black_overlay">#66000000</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="gray05">#0d0d0d</color>
     <color name="gray10">#1a1a1a</color>
     <color name="gray20">#333333</color>
     <color name="gray30">#4d4d4d</color>
     <color name="gray50">#7f7f7f</color>
+    <color name="gray60">#999999</color>
+    <color name="gray70">#b3b3b3</color>
+    <color name="gray_background">#f1f1f1</color>
+    <color name="text_color">#4d4d4d</color>
 </resources>

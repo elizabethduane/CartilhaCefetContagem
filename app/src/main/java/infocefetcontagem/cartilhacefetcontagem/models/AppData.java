@@ -66,7 +66,8 @@ public class AppData {
         photoList.add(new Photo("Entrada", R.drawable.gallery_entrada1, PLACE_EXTERNO));
         photoList.add(new Photo("Entrada", R.drawable.gallery_entrada2,PLACE_EXTERNO));
         photoList.add(new Photo("Rampa de acesso ao prédio", R.drawable.gallery_rampa,PLACE_EXTERNO));
-        photoList.add(new Photo("Rampa de acesso ao prédio", R.drawable.visao1,PLACE_EXTERNO));
+        photoList.add(new Photo("Prédio Principal", R.drawable.visao1,PLACE_EXTERNO));
+        photoList.add(new Photo("Prédio Principal e Campo", R.drawable.gallery_predio_campo,PLACE_EXTERNO));
         photoList.add(new Photo("Escada de acesso ao campo", R.drawable.gallery_escada,PLACE_EXTERNO));
         photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_campo1,PLACE_EXTERNO));
         photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_campo2,PLACE_EXTERNO));
@@ -101,67 +102,64 @@ public class AppData {
     private static void inicializeSectorData(){
 
         sectorArrayList = new ArrayList<Sector>();
+        Sector sector;
 
-        sectorArrayList.add(new Sector(null,"Comissão Local do Ensino Remoto",
-                null, "caa-cn@cefetmg.br",
-                new String[]{"Profa. Glenda Aparecida de Carvalho (Presidente)" }, null));
+        sectorArrayList.add(new Sector(null,"Comissão Local do Ensino Remoto", "caa-cn@cefetmg.br",
+                new String[]{"Profa. Glenda Aparecida de Carvalho (Presidente)" }));
 
         sectorArrayList.add(
-                new Sector(null,"Diretoria do Campus Contagem",
-                        null,"dc-cn@cefetmg.br",
+                new Sector(null,"Diretoria do Campus Contagem", "dc-cn@cefetmg.br",
                         new String[]{"Prof. Gustavo Campos Menezes (Diretor)",
-                                "Luana Aparecida Barbosa Braga (Diretora Adjunta)"},
-                        null));
+                                "Luana Aparecida Barbosa Braga \n(Diretora Adjunta)"}));
 
         sectorArrayList.add(new Sector("CAA","Coordenação de Assuntos Acadêmicos",
-                null,"caa-cn@cefetmg.br",
-                new String[]{"Profa. Glenda Aparecida de Carvalho"},
-                null));
+                "caa-cn@cefetmg.br",
+                new String[]{"Profa. Glenda Aparecida de Carvalho"}));
 
-        sectorArrayList.add(new Sector("BIBCON","Biblioteca",
-                null,
+        sector = new Sector("BIBCON","Biblioteca",
                 "bibcon@cefetmg.br",
                 new String[]{"Fabiana Pés do Nascimento",
                         "Francilene Ramos Lourenço Soares (Chefe)",
-                        "Webert Júnio Araújo"},
-                "@bibliotecacefetcontagem"));
+                        "Webert Júnio Araújo"});
+        sector.setSocial("@bibliotecacefetcontagem");
+        sector.setUrlSocial("https://www.instagram.com/bibliotecacefetcontagem/");
 
-        sectorArrayList.add(new Sector("CDE","Coordenação de Desenvolvimento Estudantil",
-                "more details","cde-cn@cefetmg.br",
+        sectorArrayList.add(sector);
+
+        sector = new Sector("CDE","Coordenação de Desenvolvimento Estudantil",
+                "cde-cn@cefetmg.br",
                 new String[]{"Clarice de Paula Gouveia",
                         "Dilene Pinheiro da Silva",
-                        "Luiza Moraes Candido (Chefe)"
-                },
-                null));
+                        "Luiza Moraes Candido (Chefe)"});
+
+        sector.setDescription("more details");
+
+        sectorArrayList.add(sector);
 
         sectorArrayList.add(new Sector("CRA","Coordenação de Registro Acadêmico",
-                null,
                 "cra-cn@cefetmg.br",
                 new String[]{"Cassia Beatriz da Silva",
                 "Dheison Ramos de Sousa (Chefe)",
-                "Viviane de Paula Zamboni"},
-                null));
+                "Viviane de Paula Zamboni"}));
 
         sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Controle Ambiental",
-                null,"meirelles@cefetmg.br",
-                new String[]{"Prof. Roberto Meireles Glória (Coordenador)" },
-                null));
+                "meirelles@cefetmg.br",
+                new String[]{"Prof. Roberto Meireles Glória (Coordenador)" }));
 
-        sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Eletroeletrônica",
-                null,"emersonalves@cefetmg.br",
-                new String[]{"Prof. Emerson Alves da Silva (Coordenador)" },
-                null));
+        sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Eletroeletrônica", "emersonalves@cefetmg.br",
+                new String[]{"Prof. Emerson Alves da Silva (Coordenador)" }));
 
         sectorArrayList.add(new Sector(null,"Coordenação do Curso Técnico em Informática",
-                null,"alissonrs@cefetmg.br",
-                new String[]{"Alisson Rodrigo dos Santos (Coordenador)"},
-                null));
+                "alissonrs@cefetmg.br",
+                new String[]{"Prof. Alisson Rodrigo dos Santos (Coordenador)"}));
 
-        sectorArrayList.add(new Sector(null,"Secretaria / Recepção",
-                null,"caa-cn@cefetmg.br",
-                new String[]{"Clébia Silva",
-                        "Luciana de Freitas Setragni"},
-                null));
+        sector = new Sector(null,"Secretaria / Recepção","caa-cn@cefetmg.br",
+                new String[]{"Clébia Silva", "Luciana de Freitas Setragni"});
+
+        sector.setPhone(new String[]{"(31) 3368-4300 / 3368-4302"});
+
+        sectorArrayList.add(sector);
+
 
     }
 

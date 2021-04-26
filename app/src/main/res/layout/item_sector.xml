@@ -5,18 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="16dp"
+
+    android:clickable="false"
+
     >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        app:cardBackgroundColor="@color/primaryTextColor">
+      >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -27,10 +31,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/primaryLightColor"
+                    android:fontFamily="@font/montserrat"
                     android:padding="8dp"
                     android:text="Titulo"
                     android:textColor="@color/primaryTextColor"
-                    android:textSize="14dp"
+                    android:textSize="@dimen/normal_text"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -47,34 +52,38 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/montserrat"
                     android:padding="8dp"
                     android:text="contato1"
-                    android:textSize="14dp"
-                    android:textColor="@color/secondaryTextColor"/>
+                    android:textAlignment="center"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/normal_text" />
 
                 <TextView
                     android:id="@+id/textView_sector_contact2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/montserrat"
                     android:paddingHorizontal="8dp"
                     android:paddingBottom="8dp"
                     android:text="contato2"
-                    android:textSize="14dp"
-                    android:visibility="gone"
-                    android:textColor="@color/secondaryTextColor"/>
+                    android:textAlignment="center"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/normal_text" />
 
                 <TextView
                     android:id="@+id/textView_sector_contact3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/montserrat"
                     android:paddingHorizontal="8dp"
                     android:paddingBottom="8dp"
                     android:text="contato3"
-                    android:textSize="14dp"
-                    android:visibility="gone"
-                    android:textColor="@color/secondaryTextColor"/>
+                    android:textAlignment="center"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/normal_text" />
 
             </LinearLayout>
 
@@ -82,10 +91,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="16dp"
-                >
+                android:paddingHorizontal="16dp">
 
-                <View style="@style/Divider.Horizontal" />
+                <View style="@style/Divider.HorizontalSecondary" />
             </LinearLayout>
 
 
@@ -93,79 +101,112 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
                 android:layout_marginTop="8dp"
-                android:clickable="true"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_baseline_mail_outline_24" />
+                    android:src="@drawable/icons8_important_mail_96" />
 
                 <TextView
                     android:id="@+id/textView_sector_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:paddingLeft="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="E-mail do setor: "
-                    android:textSize="16dp"
-                    android:textColor="@color/secondaryTextColor"
-                    android:textIsSelectable="true"/>
+                    android:textColor="@color/text_color"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/normal_text" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/group_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:paddingHorizontal="8dp"
                 android:layout_marginTop="8dp"
-                android:paddingBottom="8dp"
                 android:clickable="true"
-                >
+                android:focusable="true"
+                android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/phone_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/icons8_instagram_96"
+                    android:src="@drawable/icons8_phone_96" />
+
+                <TextView
+                    android:id="@+id/textView_sector_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingLeft="8dp"
+                    android:text="3333-3333"
+                    android:textColor="@color/text_color"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/normal_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_social_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <ImageView
                     android:id="@+id/icon_social"
-                    android:visibility="gone"/>
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:clickable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icons8_instagram_96" />
 
                 <TextView
                     android:id="@+id/textView_sector_social"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/montserrat"
                     android:paddingLeft="8dp"
-                    android:text="social"
-                    android:textSize="16dp"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/text_color"
                     android:textIsSelectable="true"
-                    android:visibility="gone"/>
+                    android:textSize="@dimen/normal_text" />
 
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
                 <TextView
                     android:id="@+id/more_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mais Informações"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
                     android:background="@color/secondaryColor"
-                    android:textColor="@color/secondaryTextColor"
                     android:clickable="true"
-                    android:layout_alignParentEnd="true"
-                    android:visibility="gone"/>
+                    android:fontFamily="@font/montserrat"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:text="Mais Informações"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/normal_text" />
             </RelativeLayout>
 
         </LinearLayout>

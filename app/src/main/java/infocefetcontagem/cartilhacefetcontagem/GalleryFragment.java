@@ -1,15 +1,16 @@
 package infocefetcontagem.cartilhacefetcontagem;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 
 import java.util.List;
@@ -17,6 +18,8 @@ import java.util.List;
 import infocefetcontagem.cartilhacefetcontagem.adapters.PhotoRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;
+
+import static android.os.Build.VERSION_CODES.M;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,11 +37,8 @@ public class GalleryFragment extends Fragment implements PhotoRecyclerViewAdapte
     private String mParam1;
     private String mParam2;
 
-    private static final String ARG_COLUMN_COUNT = "column-count";
     private static final String TAG = "GalleryFragment" ;
-    // TODO: Customize parameters
-    private int mColumnCount = 3;
-    private List<Photo> mPhotoList;
+    private static final int COLUMN_COUNT = 3;
 
     public GalleryFragment() {
         // Required empty public constructor
@@ -77,21 +77,22 @@ public class GalleryFragment extends Fragment implements PhotoRecyclerViewAdapte
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
+        Window window = this.getActivity().getWindow();
+        window.setStatusBarColor(this.getResources().getColor(R.color.primaryColor));
+
+        if (Build.VERSION.SDK_INT >= M) {
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);//  set status text dark
+        }
+
         RecyclerView recyclerViewGrid = (RecyclerView) view.findViewById(R.id.recycler_view_grid);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
-        if (mColumnCount <= 1) {
-            recyclerViewGrid.setLayoutManager(new LinearLayoutManager(container.getContext()));
-        } else {
-            recyclerViewGrid.setLayoutManager(new GridLayoutManager(container.getContext(), mColumnCount));
-        }
+        recyclerViewGrid.setLayoutManager(new GridLayoutManager(container.getContext(), COLUMN_COUNT));
 
-
-        mPhotoList = AppData.getPhotos();
+        List<Photo> mPhotoList = AppData.getPhotos();
         recyclerViewGrid.setAdapter(new PhotoRecyclerViewAdapter(mPhotoList,this));
-
 
         ImageView p1 = (ImageView)view.findViewById(R.id.place_externo);
 
@@ -128,27 +129,16 @@ public class GalleryFragment extends Fragment implements PhotoRecyclerViewAdapte
 
     @Override
     public void onItemClick(int position) {
+
         Intent intent = new Intent(this.getContext(), SliderImageActivity.class);
-
-
-        Log.d(TAG, "onItemClick: position "+position);
-
         intent.putExtra("place", AppData.PLACE_ALL);
         intent.putExtra("position", position);
         startActivity(intent);
 
-        /*Photo photo = new Photo();
-        List<Photo> photos = photo.getPhotosByPlace(0);
-        photo = photos.get(position);
-
-        intent.putExtra("photoId", photo.getPhotoId());
-        startActivity(intent);*/
     }
 
     public void onPlaceClick(View view) {
         int  place = -1;
-
-
 
         switch (view.getId()){
             case R.id.place_externo:
@@ -162,21 +152,9 @@ public class GalleryFragment extends Fragment implements PhotoRecyclerViewAdapte
                 break;
         }
 
-        Log.d(TAG, "onPlaceClick: "+ view.getId());
-
         Intent intent = new Intent(this.getContext(), SliderImageActivity.class);
-
-        Log.d(TAG, "onPlaceClick: " + place);
-
         intent.putExtra("place", place);
         intent.putExtra("position", 0);
         startActivity(intent);
-
-        /*Photo photo = new Photo();
-        List<Photo> photos = photo.getPhotosByPlace(0);
-        photo = photos.get(position);
-
-        intent.putExtra("photoId", photo.getPhotoId());
-        startActivity(intent);*/
     }
 }
