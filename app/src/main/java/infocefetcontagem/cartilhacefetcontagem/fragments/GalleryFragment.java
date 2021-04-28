@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.fragments;
 
 import android.content.Intent;
 import android.os.Build;
@@ -15,6 +15,8 @@ import android.widget.ImageView;
 
 import java.util.List;
 
+import infocefetcontagem.cartilhacefetcontagem.R;
+import infocefetcontagem.cartilhacefetcontagem.SliderImageActivity;
 import infocefetcontagem.cartilhacefetcontagem.adapters.PhotoRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;

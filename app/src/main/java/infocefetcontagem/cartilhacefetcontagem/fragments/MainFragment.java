@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +20,7 @@ import android.widget.ViewFlipper;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import infocefetcontagem.cartilhacefetcontagem.R;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 

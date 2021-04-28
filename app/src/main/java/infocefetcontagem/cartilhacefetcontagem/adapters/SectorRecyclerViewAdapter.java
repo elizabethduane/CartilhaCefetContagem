@@ -13,7 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.dummy.DummyContent.DummyItem;
 import infocefetcontagem.cartilhacefetcontagem.CDEActivity;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
 
@@ -23,10 +22,6 @@ import static android.content.ContentValues.TAG;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecyclerViewAdapter.ViewHolder>
         implements View.OnClickListener{
 

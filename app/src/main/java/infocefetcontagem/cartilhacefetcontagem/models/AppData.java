@@ -63,8 +63,8 @@ public class AppData {
     private static void inicializePhotoData(){
         photoList = new ArrayList<>();
 
-        photoList.add(new Photo("Entrada", R.drawable.gallery_entrada1, PLACE_EXTERNO));
-        photoList.add(new Photo("Entrada", R.drawable.gallery_entrada2,PLACE_EXTERNO));
+        photoList.add(new Photo("Entrada do Campus", R.drawable.gallery_entrada1, PLACE_EXTERNO));
+        photoList.add(new Photo("Entrada do Campus", R.drawable.gallery_entrada2,PLACE_EXTERNO));
         photoList.add(new Photo("Rampa de acesso ao prédio", R.drawable.gallery_rampa,PLACE_EXTERNO));
         photoList.add(new Photo("Prédio Principal", R.drawable.visao1,PLACE_EXTERNO));
         photoList.add(new Photo("Prédio Principal e Campo", R.drawable.gallery_predio_campo,PLACE_EXTERNO));
@@ -72,11 +72,12 @@ public class AppData {
         photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_campo1,PLACE_EXTERNO));
         photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_campo2,PLACE_EXTERNO));
         photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_campo3,PLACE_EXTERNO));
-        photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_vista1,PLACE_EXTERNO));
-        photoList.add(new Photo("Campo de Futebol", R.drawable.gallery_vista2,PLACE_EXTERNO));
+        photoList.add(new Photo("Vista do Espaço Externo", R.drawable.gallery_vista1,PLACE_EXTERNO));
+        photoList.add(new Photo("Vista Superior do Campus", R.drawable.gallery_vista2,PLACE_EXTERNO));
 
         photoList.add(new Photo("Biblioteca", R.drawable.gallery_biblioteca,PLACE_INTERNO));
-        photoList.add(new Photo("Corredor", R.drawable.gallery_corredor,PLACE_INTERNO));
+        photoList.add(new Photo("Auditório", R.drawable.gallery_auditorio, PLACE_INTERNO));
+        photoList.add(new Photo("Corredor do 5ª andar", R.drawable.gallery_corredor,PLACE_INTERNO));
         photoList.add(new Photo("Sala de Aula", R.drawable.gallery_sala,PLACE_INTERNO));
         photoList.add(new Photo("Sala de Artes", R.drawable.gallery_sala_artes1,PLACE_INTERNO));
         photoList.add(new Photo("Sala de Artes", R.drawable.gallery_sala_artes2,PLACE_INTERNO));

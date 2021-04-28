@@ -8,10 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import infocefetcontagem.cartilhacefetcontagem.fragments.GalleryFragment;
+import infocefetcontagem.cartilhacefetcontagem.fragments.MainFragment;
+import infocefetcontagem.cartilhacefetcontagem.fragments.SectorsFragment;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 
 import static android.os.Build.VERSION_CODES.M;

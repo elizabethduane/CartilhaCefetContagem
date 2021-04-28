@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.dummy.DummyContent.DummyItem;
 import infocefetcontagem.cartilhacefetcontagem.models.Photo;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class PhotoRecyclerViewAdapter extends RecyclerView.Adapter<PhotoRecyclerViewAdapter.ViewHolder>

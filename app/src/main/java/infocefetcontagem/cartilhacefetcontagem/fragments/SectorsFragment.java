@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.cartilhacefetcontagem.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.view.Window;
 
 import java.util.List;
 
+import infocefetcontagem.cartilhacefetcontagem.R;
 import infocefetcontagem.cartilhacefetcontagem.adapters.SectorRecyclerViewAdapter;
 import infocefetcontagem.cartilhacefetcontagem.models.AppData;
 import infocefetcontagem.cartilhacefetcontagem.models.Sector;
