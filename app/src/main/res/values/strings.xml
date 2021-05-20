@@ -27,6 +27,7 @@
     <string name="main_link">www.contagem.cefetmg.br</string>
     <string name="main_welcome">Olá! Seja bem-vindo(a)!</string>
     <string name="main_description">Aqui você encontra fotos do nosso Campus e os principais contatos para você ficar conectado no Ensino Remoto Emergencial.</string>
+    <string name="calendario_2021">Calendário 2021</string>
 
     <string-array name="array_sectors">
         <!-- id ; cod ; título ; descrição ; email ; social-->

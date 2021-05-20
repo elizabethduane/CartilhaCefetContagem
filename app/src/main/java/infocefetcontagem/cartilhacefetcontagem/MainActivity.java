@@ -11,6 +11,7 @@ import android.view.Window;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import infocefetcontagem.cartilhacefetcontagem.fragments.CalendarFragment;
 import infocefetcontagem.cartilhacefetcontagem.fragments.GalleryFragment;
 import infocefetcontagem.cartilhacefetcontagem.fragments.MainFragment;
 import infocefetcontagem.cartilhacefetcontagem.fragments.SectorsFragment;
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
                     //mTextMessage.setText(R.string.title_notifications);
                     ft = fm.beginTransaction();
                     ft.replace(R.id.fragment_content,new GalleryFragment());
+                    ft.commit();
+                    return true;
+
+                case R.id.navigation_calendar:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    ft = fm.beginTransaction();
+                    ft.replace(R.id.fragment_content,new CalendarFragment());
                     ft.commit();
                     return true;
             }
