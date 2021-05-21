@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="infocefetcontagem.cartilhacefetcontagem">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="infocefetcontagem.appcefetcontagem"
+    android:versionCode="1"
+    android:versionName="ERE2021">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -11,17 +13,20 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/school"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".SliderImageActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:debuggable="false"
+        tools:ignore="HardcodedDebugMode">
+
+        <activity android:name="infocefetcontagem.appcefetcontagem.SliderImageActivity"></activity>
         <activity
-            android:name=".CDEActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="infocefetcontagem.appcefetcontagem.CDEActivity"
+            android:parentActivityName="infocefetcontagem.appcefetcontagem.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="infocefetcontagem.appcefetcontagem.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop" />
         <activity
-            android:name=".TelaInicial"
+            android:name="infocefetcontagem.appcefetcontagem.TelaInicial"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +37,8 @@
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"
+            />
 
     </application>
 

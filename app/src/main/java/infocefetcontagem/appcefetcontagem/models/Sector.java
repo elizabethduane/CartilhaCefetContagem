@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem.models;
+package infocefetcontagem.appcefetcontagem.models;
 
 import java.io.Serializable;
 

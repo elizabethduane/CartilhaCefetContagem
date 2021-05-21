@@ -1,11 +1,9 @@
-package infocefetcontagem.cartilhacefetcontagem.models;
-
-import android.content.res.Resources;
+package infocefetcontagem.appcefetcontagem.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
+import infocefetcontagem.appcefetcontagem.R;
 
 public class AppData {
 

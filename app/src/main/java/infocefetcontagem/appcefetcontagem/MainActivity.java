@@ -1,21 +1,23 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.appcefetcontagem;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import infocefetcontagem.cartilhacefetcontagem.fragments.CalendarFragment;
-import infocefetcontagem.cartilhacefetcontagem.fragments.GalleryFragment;
-import infocefetcontagem.cartilhacefetcontagem.fragments.MainFragment;
-import infocefetcontagem.cartilhacefetcontagem.fragments.SectorsFragment;
-import infocefetcontagem.cartilhacefetcontagem.models.AppData;
+import infocefetcontagem.appcefetcontagem.fragments.CalendarFragment;
+import infocefetcontagem.appcefetcontagem.fragments.GalleryFragment;
+import infocefetcontagem.appcefetcontagem.fragments.MainFragment;
+import infocefetcontagem.appcefetcontagem.fragments.SectorsFragment;
+import infocefetcontagem.appcefetcontagem.models.AppData;
 
 import static android.os.Build.VERSION_CODES.M;
 

@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.appcefetcontagem;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,16 +1,16 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.appcefetcontagem;
 
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import 	androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.adapters.SliderImageAdapter;
-import infocefetcontagem.cartilhacefetcontagem.models.AppData;
-import infocefetcontagem.cartilhacefetcontagem.models.Photo;
+import infocefetcontagem.appcefetcontagem.adapters.SliderImageAdapter;
+import infocefetcontagem.appcefetcontagem.models.AppData;
+import infocefetcontagem.appcefetcontagem.models.Photo;
 
 public class SliderImageActivity extends AppCompatActivity {
 

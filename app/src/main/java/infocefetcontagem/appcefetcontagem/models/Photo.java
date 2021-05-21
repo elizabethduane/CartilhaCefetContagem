@@ -1,16 +1,10 @@
-package infocefetcontagem.cartilhacefetcontagem.models;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.Log;
+package infocefetcontagem.appcefetcontagem.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
-
-import static android.content.ContentValues.TAG;
+import infocefetcontagem.appcefetcontagem.R;
 
 public class Photo implements Serializable {
 
@@ -79,7 +73,7 @@ public class Photo implements Serializable {
             }
         }
 
-        Log.d(TAG, "getPhotosByPlace: " + place);
+
         //remove which ones that are different from the required place
 
         return filteredPhotos;

@@ -1,14 +1,13 @@
-package infocefetcontagem.cartilhacefetcontagem.adapters;
+package infocefetcontagem.appcefetcontagem.adapters;
 
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.models.Photo;
+import infocefetcontagem.appcefetcontagem.R;
+import infocefetcontagem.appcefetcontagem.models.Photo;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        Log.d("onClick", "ONCLICK");
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

@@ -1,9 +1,9 @@
-package infocefetcontagem.cartilhacefetcontagem.adapters;
+package infocefetcontagem.appcefetcontagem.adapters;
 
 import android.content.Context;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.v4.view.PagerAdapter;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.models.Photo;
+import infocefetcontagem.appcefetcontagem.R;
+import infocefetcontagem.appcefetcontagem.models.Photo;
 
 public class SliderImageAdapter extends PagerAdapter {
 

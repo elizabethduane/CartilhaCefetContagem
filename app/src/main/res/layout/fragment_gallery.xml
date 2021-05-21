@@ -88,9 +88,6 @@
              android:text="@string/laboratorios"
              app:autoSizeTextType="uniform" />
 
-
-
-
          <TextView
              android:id="@+id/place_description_interno"
              android:layout_width="80dp"
@@ -105,8 +102,7 @@
              app:autoSizeTextType="uniform" />
       </LinearLayout>
 
-
-   <android.support.v7.widget.RecyclerView
+   <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:id="@+id/recycler_view_grid"

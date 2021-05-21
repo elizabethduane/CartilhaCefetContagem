@@ -1,12 +1,12 @@
-package infocefetcontagem.cartilhacefetcontagem.fragments;
+package infocefetcontagem.appcefetcontagem.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +14,11 @@ import android.view.Window;
 
 import java.util.List;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.adapters.SectorRecyclerViewAdapter;
-import infocefetcontagem.cartilhacefetcontagem.models.AppData;
-import infocefetcontagem.cartilhacefetcontagem.models.Sector;
+import infocefetcontagem.appcefetcontagem.R;
+import infocefetcontagem.appcefetcontagem.adapters.SectorRecyclerViewAdapter;
+import infocefetcontagem.appcefetcontagem.models.AppData;
+import infocefetcontagem.appcefetcontagem.models.Sector;
 
-import static android.content.ContentValues.TAG;
 import static android.os.Build.VERSION_CODES.M;
 
 /**
@@ -101,6 +100,6 @@ public class SectorsFragment extends Fragment implements SectorRecyclerViewAdapt
 
     @Override
     public void onItemClick(int position) {
-        Log.d(TAG, "onItemClick: " + position);
+
     }
 }

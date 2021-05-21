@@ -1,8 +1,8 @@
-package infocefetcontagem.cartilhacefetcontagem.fragments;
+package infocefetcontagem.appcefetcontagem.fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +15,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
+import infocefetcontagem.appcefetcontagem.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -97,7 +97,6 @@ public class CalendarFragment extends Fragment {
                 if(urlConnection.getResponseCode() == 200)
                 {
                     inputStream = new BufferedInputStream(urlConnection.getInputStream());
-
 
                 }
             }catch (IOException e)

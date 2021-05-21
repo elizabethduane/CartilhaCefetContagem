@@ -1,4 +1,4 @@
-package infocefetcontagem.cartilhacefetcontagem;
+package infocefetcontagem.appcefetcontagem;
 
 import org.junit.Test;
 

@@ -1,10 +1,10 @@
-package infocefetcontagem.cartilhacefetcontagem.adapters;
+package infocefetcontagem.appcefetcontagem.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +12,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import infocefetcontagem.cartilhacefetcontagem.R;
-import infocefetcontagem.cartilhacefetcontagem.CDEActivity;
-import infocefetcontagem.cartilhacefetcontagem.models.Sector;
+import infocefetcontagem.appcefetcontagem.R;
+import infocefetcontagem.appcefetcontagem.CDEActivity;
+import infocefetcontagem.appcefetcontagem.models.Sector;
 
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
@@ -58,8 +57,6 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
         holder.title.setText(title);
 
         String [] contacts = holder.mItem.getNameContacts();
-
-        Log.d(TAG, "onBindViewHolder: " + contacts);
 
         holder.contact1.setText(contacts[0]);
 
@@ -108,7 +105,7 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
 
     @Override
     public void onClick(View view) {
-        Log.d("onClick", "ONCLICK");
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -183,7 +180,7 @@ public class SectorRecyclerViewAdapter extends RecyclerView.Adapter<SectorRecycl
         }
 
         public void onClickEmail(View view){
-            Log.d(TAG, "onClickEmail: "+ this.email.getText());
+
         }
 
         public void onClickDetails(View view){
